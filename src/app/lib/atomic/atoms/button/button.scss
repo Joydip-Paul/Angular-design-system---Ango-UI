@@ -15,6 +15,13 @@
   box-shadow: 0 16px 35px rgba(15, 23, 42, 0.25);
 }
 
+.ango-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
 .ango-button.ghost {
   background: transparent;
   color: #0f172a;

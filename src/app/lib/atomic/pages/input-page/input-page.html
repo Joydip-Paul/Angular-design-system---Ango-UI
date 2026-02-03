@@ -1,0 +1,42 @@
+<section class="atomic-page">
+  <header>
+    <p class="eyebrow">Atoms</p>
+    <h1>Inputs</h1>
+    <p class="subhead">All input variations with copy-ready code snippets.</p>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-input placeholder="Type something"></ango-input>
+    </div>
+    <ango-code-block [code]="inputTextCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-input type="email" placeholder="name@company.com"></ango-input>
+    </div>
+    <ango-code-block [code]="inputEmailCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-input type="password" placeholder="••••••••"></ango-input>
+    </div>
+    <ango-code-block [code]="inputPasswordCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-input placeholder="Disabled" [disabled]="true"></ango-input>
+    </div>
+    <ango-code-block [code]="inputDisabledCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-form-field label="Email" placeholder="you@example.com" type="email"></ango-form-field>
+    </div>
+    <ango-code-block [code]="formFieldCode"></ango-code-block>
+  </div>
+</section>

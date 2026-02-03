@@ -1,59 +1,73 @@
-# AngoUi
+# Ango UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+Ango UI is an Angular design system built with Atomic Design, Signals, and OnPush.
+The goal: let teams copy one folder and start shipping consistent UI fast.
 
-## Development server
+## Highlights
+- Atomic structure: atoms, molecules, organisms, templates, pages.
+- Copy-first: users can copy `src/app/lib/atomic` into their own Angular apps.
+- Design system docs with a left sidebar + right preview + copyable code snippets.
 
-To start a local development server, run:
-
+## Quick Start
 ```bash
-ng serve
+npm install
+npm run start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200/` to see the landing page.
 
-## Code scaffolding
+## App Routes
+- `/` Landing page
+- `/design-system` Design system overview
+- `/design-system/components` Components gallery
+- `/design-system/components/buttons` Button variants
+- `/design-system/components/inputs` Input variants
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+## Atomic Folder (Copy This)
+The entire design system lives inside:
+```
+src/app/lib/atomic
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+Copy that folder into your Angular project and use the components directly:
+```
+src/app/lib/atomic/atoms
+src/app/lib/atomic/molecules
+src/app/lib/atomic/organisms
+src/app/lib/atomic/utils
+src/app/lib/atomic/tokens
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
+## Tokens
+Edit tokens here to match your brand:
+```
+src/app/lib/atomic/tokens/tokens.scss
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+## Project Structure
+```
+src/
+  app/
+    features/
+      landing/
+      design-system/
+    lib/
+      atomic/
+        atoms/
+        molecules/
+        organisms/
+        templates/
+        pages/
+        utils/
+        tokens/
 ```
 
-## Running end-to-end tests
+## Scripts
+- `npm run start` Dev server
+- `npm run build` Production build
+- `npm run test` Unit tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Built With
+- Angular 20
+- Standalone components
+- Signals + OnPush

@@ -20,6 +20,35 @@ export const DESIGN_SYSTEM_ROUTES: Routes = [
         path: 'components',
         loadComponent: () =>
           import('./pages/components/components').then(m => m.ComponentsPage),
+        pathMatch: 'full',
+      },
+      {
+        path: 'components/buttons',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/button-page/button-page').then(
+            m => m.ButtonPage
+          ),
+      },
+      {
+        path: 'components/inputs',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/input-page/input-page').then(
+            m => m.InputPage
+          ),
+      },
+      {
+        path: 'components/molecules',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/molecules-page/molecules-page').then(
+            m => m.MoleculesPage
+          ),
+      },
+      {
+        path: 'components/organisms',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/organisms-page/organisms-page').then(
+            m => m.OrganismsPage
+          ),
       },
       { path: '**', redirectTo: '' },
     ],

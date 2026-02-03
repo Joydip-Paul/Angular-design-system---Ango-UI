@@ -3,7 +3,7 @@ import { AtomicButton } from '../../../../lib/atomic/atoms/button/button';
 import { AtomicInput } from '../../../../lib/atomic/atoms/input/input';
 import { AtomicFormField } from '../../../../lib/atomic/molecules/form-field/form-field';
 import { AtomicSignInCard } from '../../../../lib/atomic/organisms/sign-in-card/sign-in-card';
-import { CodeBlock } from '../../ui/code-block/code-block';
+import { AtomicCodeBlock } from '../../../../lib/atomic/utils/copy/code-block/code-block';
 
 @Component({
   selector: 'app-components-page',
@@ -13,7 +13,7 @@ import { CodeBlock } from '../../ui/code-block/code-block';
     AtomicInput,
     AtomicFormField,
     AtomicSignInCard,
-    CodeBlock,
+    AtomicCodeBlock,
   ],
   templateUrl: './components.html',
   styleUrl: './components.scss',

@@ -10,4 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AtomicButton {
   @Input() label = 'Button';
   @Input() variant: 'primary' | 'ghost' = 'primary';
+  @Input() disabled = false;
 }

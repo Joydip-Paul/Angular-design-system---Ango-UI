@@ -10,4 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AtomicInput {
   @Input() placeholder = '';
   @Input() type: 'text' | 'email' | 'password' = 'text';
+  @Input() disabled = false;
 }
