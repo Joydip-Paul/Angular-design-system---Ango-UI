@@ -1,0 +1,48 @@
+.components-page {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.page-header {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.subhead {
+  color: #475569;
+  margin: 0;
+}
+
+.component-block {
+  padding: 2rem;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+}
+
+.component-info {
+  h2 {
+    margin-bottom: 5px;
+  }
+  p{
+    margin-bottom: 10px;
+  }
+}
+
+.component-preview {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .component-block {
+    grid-template-columns: 1fr;
+  }
+}

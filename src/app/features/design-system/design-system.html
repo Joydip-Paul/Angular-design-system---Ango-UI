@@ -1,0 +1,44 @@
+<div class="ds-shell">
+  <aside class="ds-sidebar">
+    <div class="ds-brand">
+      <span class="eyebrow">Ango UI</span>
+      <h2>Design System</h2>
+    </div>
+
+    <nav class="ds-nav">
+      <a routerLink="/design-system" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Overview
+      </a>
+      <a routerLink="/design-system/foundations" routerLinkActive="active">
+        Foundations
+      </a>
+      <a routerLink="/design-system/components" routerLinkActive="active">
+        Components
+      </a>
+    </nav>
+
+    <div class="ds-section">
+      <p class="section-title">Atoms</p>
+      <ul>
+        <li>Buttons</li>
+        <li>Inputs</li>
+      </ul>
+    </div>
+    <div class="ds-section">
+      <p class="section-title">Molecules</p>
+      <ul>
+        <li>Form Field</li>
+      </ul>
+    </div>
+    <div class="ds-section">
+      <p class="section-title">Organisms</p>
+      <ul>
+        <li>Sign-in Card</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="ds-content">
+    <router-outlet />
+  </main>
+</div>

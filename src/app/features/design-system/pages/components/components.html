@@ -1,0 +1,53 @@
+<div class="components-page">
+  <header class="page-header">
+    <p class="eyebrow">Components</p>
+    <h1>Atoms, Molecules, Organisms</h1>
+    <p class="subhead">
+      Copy a snippet, paste into your project, and customize tokens.
+    </p>
+  </header>
+
+  <section class="component-block">
+    <div class="component-info">
+      <h2>Atom · Button</h2>
+      <p>Primary button with hover states.</p>
+    </div>
+    <div class="component-preview">
+      <ango-button label="Primary Button"></ango-button>
+      <code-block [code]="buttonCode"></code-block>
+    </div>
+  </section>
+
+  <section class="component-block">
+    <div class="component-info">
+      <h2>Atom · Input</h2>
+      <p>Text input styled for forms.</p>
+    </div>
+    <div class="component-preview">
+      <ango-input placeholder="Your email"></ango-input>
+      <code-block [code]="inputCode"></code-block>
+    </div>
+  </section>
+
+  <section class="component-block">
+    <div class="component-info">
+      <h2>Molecule · Form Field</h2>
+      <p>Label + input combination, ready for forms.</p>
+    </div>
+    <div class="component-preview">
+      <ango-form-field label="Email" placeholder="you@example.com"></ango-form-field>
+      <code-block [code]="formFieldCode"></code-block>
+    </div>
+  </section>
+
+  <section class="component-block">
+    <div class="component-info">
+      <h2>Organism · Sign-in Card</h2>
+      <p>Complete sign-in block with two inputs and CTA.</p>
+    </div>
+    <div class="component-preview">
+      <ango-signin-card title="Sign in" subtitle="Use your company email"></ango-signin-card>
+      <code-block [code]="signInCardCode"></code-block>
+    </div>
+  </section>
+</div>
