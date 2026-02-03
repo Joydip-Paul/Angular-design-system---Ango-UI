@@ -1,12 +1,14 @@
+@use '../../tokens/tokens' as *;
+
 .ango-button {
   border: none;
-  border-radius: 999px;
+  border-radius: $ango-radius-pill;
   padding: 0.7rem 1.6rem;
   font-weight: 600;
   cursor: pointer;
-  background: #0f172a;
-  color: #f8fafc;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2);
+  background: $ango-ink;
+  color: $ango-surface-soft;
+  box-shadow: $ango-shadow-soft;
   transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
@@ -24,7 +26,7 @@
 
 .ango-button.ghost {
   background: transparent;
-  color: #0f172a;
-  border: 1px solid #cbd5f5;
+  color: $ango-ink;
+  border: 1px solid $ango-border;
   box-shadow: none;
 }

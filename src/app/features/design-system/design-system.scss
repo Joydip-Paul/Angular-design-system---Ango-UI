@@ -1,13 +1,15 @@
+@use '../../lib/atomic/tokens/tokens' as *;
+
 .ds-shell {
-  background: #f8fafc;
-  color: #0f172a;
-  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  background: $ango-surface-soft;
+  color: $ango-ink;
+  font-family: $ango-font-sans;
 }
 
 .ds-sidebar {
   padding: 1rem;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: $ango-ink;
+  color: $ango-surface-soft;
   position: fixed;
   left: 0;
   top: 0;
@@ -33,7 +35,7 @@
 }
 
 .ds-nav a {
-  color: #e2e8f0;
+  color: $ango-surface-soft;
   text-decoration: none;
   font-weight: 600;
   padding: 0.4rem 0.6rem;
@@ -46,7 +48,7 @@
 .ds-nav a.active,
 .ds-nav a:hover {
   background: rgba(148, 163, 184, 0.2);
-  color: #f8fafc;
+  color: $ango-surface-soft;
 }
 
 .ds-section {
@@ -72,7 +74,7 @@
 
 .ds-section li {
   font-size: 0.95rem;
-  color: #e2e8f0;
+  color: $ango-surface-soft;
 }
 
 .ds-section a {

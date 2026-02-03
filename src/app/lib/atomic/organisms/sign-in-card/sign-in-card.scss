@@ -1,10 +1,12 @@
+@use '../../tokens/tokens' as *;
+
 .ango-signin-card {
   display: grid;
   gap: 1.2rem;
   padding: 2rem;
-  border-radius: 24px;
-  background: #ffffff;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  border-radius: $ango-radius-lg;
+  background: $ango-surface;
+  box-shadow: $ango-shadow-strong;
   max-width: 420px;
 }
 
@@ -15,7 +17,7 @@
 
 .card-header p {
   margin: 0;
-  color: #64748b;
+  color: $ango-muted;
 }
 
 .card-body {

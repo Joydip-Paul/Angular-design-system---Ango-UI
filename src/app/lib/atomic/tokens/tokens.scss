@@ -1,0 +1,56 @@
+// Ango UI design tokens
+:root {
+  --ango-color-ink: #0f172a;
+  --ango-color-ink-strong: #101828;
+  --ango-color-text: #334155;
+  --ango-color-muted: #64748b;
+  --ango-color-border: #cbd5f5;
+  --ango-color-surface: #ffffff;
+  --ango-color-surface-soft: #f8fafc;
+  --ango-color-surface-tint: #f1f5f9;
+
+  --ango-shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.2);
+  --ango-shadow-strong: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --ango-shadow-code: 0 16px 40px rgba(15, 23, 42, 0.2);
+
+  --ango-radius-pill: 999px;
+  --ango-radius-lg: 24px;
+  --ango-radius-md: 16px;
+  --ango-radius-sm: 12px;
+
+  --ango-space-1: 0.4rem;
+  --ango-space-2: 0.75rem;
+  --ango-space-3: 1rem;
+  --ango-space-4: 1.5rem;
+  --ango-space-5: 2rem;
+
+  --ango-font-sans: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  --ango-font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+$ango-ink: var(--ango-color-ink);
+$ango-ink-strong: var(--ango-color-ink-strong);
+$ango-text: var(--ango-color-text);
+$ango-muted: var(--ango-color-muted);
+$ango-border: var(--ango-color-border);
+$ango-surface: var(--ango-color-surface);
+$ango-surface-soft: var(--ango-color-surface-soft);
+$ango-surface-tint: var(--ango-color-surface-tint);
+
+$ango-shadow-soft: var(--ango-shadow-soft);
+$ango-shadow-strong: var(--ango-shadow-strong);
+$ango-shadow-code: var(--ango-shadow-code);
+
+$ango-radius-pill: var(--ango-radius-pill);
+$ango-radius-lg: var(--ango-radius-lg);
+$ango-radius-md: var(--ango-radius-md);
+$ango-radius-sm: var(--ango-radius-sm);
+
+$ango-space-1: var(--ango-space-1);
+$ango-space-2: var(--ango-space-2);
+$ango-space-3: var(--ango-space-3);
+$ango-space-4: var(--ango-space-4);
+$ango-space-5: var(--ango-space-5);
+
+$ango-font-sans: var(--ango-font-sans);
+$ango-font-mono: var(--ango-font-mono);

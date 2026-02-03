@@ -1,9 +1,11 @@
+@use '../../tokens/tokens' as *;
+
 .ango-input {
   width: calc(100% - 32px);
   padding: 14px;
-  border-radius: 7px;
-  border: 1px solid #cbd5f5;
-  background: #f8fafc;
+  border-radius: $ango-radius-sm;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
   font-size: 0.95rem;
   outline: none;
   transition:
@@ -12,12 +14,12 @@
 }
 
 .ango-input:focus {
-  border-color: #0f172a;
+  border-color: $ango-ink;
   box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.15);
 }
 
 .ango-input:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background: #f1f5f9;
+  background: $ango-surface-tint;
 }

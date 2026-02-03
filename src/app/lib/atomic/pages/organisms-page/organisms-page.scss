@@ -1,3 +1,5 @@
+@use '../../tokens/tokens' as *;
+
 .atomic-page {
   display: grid;
   gap: 2rem;
@@ -7,11 +9,11 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   font-size: 0.7rem;
-  color: #64748b;
+  color: $ango-muted;
 }
 
 .subhead {
-  color: #475569;
+  color: $ango-text;
   margin: 0.4rem 0 0;
 }
 
@@ -19,9 +21,9 @@
   display: grid;
   gap: 1rem;
   padding: 1.5rem;
-  border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  border-radius: $ango-radius-lg;
+  background: $ango-surface;
+  box-shadow: $ango-shadow-strong;
 }
 
 .preview {
