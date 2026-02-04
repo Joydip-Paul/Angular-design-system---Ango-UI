@@ -1,12 +1,23 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-design-system-shell',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './design-system.html',
   styleUrl: './design-system.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DesignSystemShell {}
+export class DesignSystemShell {
+  protected readonly isSidebarOpen = signal(false);
+
+  toggleSidebar() {
+    this.isSidebarOpen.update(value => !value);
+  }
+
+  closeSidebar() {
+    this.isSidebarOpen.set(false);
+  }
+}

@@ -34,6 +34,7 @@ export class AtomicDropdown {
   @Output() selectedChange = new EventEmitter<string>();
 
   protected readonly open = signal(false);
+  private hoverCloseTimer?: number;
 
   constructor(private readonly elementRef: ElementRef<HTMLElement>) {}
 
@@ -47,6 +48,7 @@ export class AtomicDropdown {
   }
 
   select(value: string) {
+    this.selected = value;
     this.selectedChange.emit(value);
     this.open.set(false);
   }
@@ -66,11 +68,30 @@ export class AtomicDropdown {
 
   onMouseEnter() {
     if (this.openOnHover && !this.disabled) {
+      if (this.hoverCloseTimer) {
+        window.clearTimeout(this.hoverCloseTimer);
+        this.hoverCloseTimer = undefined;
+      }
       this.open.set(true);
     }
   }
 
   onMouseLeave() {
+    if (this.openOnHover && !this.disabled) {
+      this.hoverCloseTimer = window.setTimeout(() => {
+        this.open.set(false);
+      }, 120);
+    }
+  }
+
+  onMenuEnter() {
+    if (this.hoverCloseTimer) {
+      window.clearTimeout(this.hoverCloseTimer);
+      this.hoverCloseTimer = undefined;
+    }
+  }
+
+  onMenuLeave() {
     if (this.openOnHover && !this.disabled) {
       this.open.set(false);
     }

@@ -5,25 +5,6 @@
   gap: 2rem;
 }
 
-.page-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-.eyebrow {
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  color: $ango-muted;
-}
-
-.subhead {
-  color: $ango-text;
-  margin: 0.4rem 0 0;
-}
-
 .explain {
   margin: 0;
   color: $ango-muted;

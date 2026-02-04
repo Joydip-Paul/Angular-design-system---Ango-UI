@@ -40,7 +40,7 @@
 
 .ango-dropdown .menu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 0;
   right: 0;
   background: $ango-surface;
@@ -49,6 +49,16 @@
   box-shadow: $ango-shadow-strong;
   display: grid;
   z-index: 10;
+}
+
+.ango-dropdown .menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
 }
 
 .ango-dropdown .menu-item {

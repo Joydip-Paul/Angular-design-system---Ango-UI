@@ -1,15 +1,16 @@
 <section class="atomic-page">
   <header class="page-header">
-    <div>
+    <div class="left">
       <p class="eyebrow">Atoms</p>
       <h1>Buttons</h1>
-      <p class="subhead">Primary, ghost, and disabled button variants.</p>
     </div>
-    <ango-button
-      label="Playground"
-      variant="ghost"
-      (click)="playgroundOpen = true"
-    ></ango-button>
+    <div class="right">
+      <ango-button
+        label="Playground"
+        variant="ghost"
+        (click)="playgroundOpen = true"
+      ></ango-button>
+    </div>
   </header>
 
   <div class="variant">
@@ -75,9 +76,9 @@
     size="md"
     (closed)="playgroundOpen = false"
   >
-    <p class="explain">Change values and see the button update live.</p>
+    <p class="explain mb-10">Change values and see the button update live.</p>
     <div class="playground-body">
-      <div class="preview">
+      <div class="drawer-preview">
         <ango-button
           [label]="playgroundLabel"
           [variant]="playgroundVariant"

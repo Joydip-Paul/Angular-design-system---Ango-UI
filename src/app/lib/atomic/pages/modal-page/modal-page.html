@@ -1,11 +1,16 @@
 <section class="atomic-page">
   <header class="page-header">
-    <div>
+    <div class="left">
       <p class="eyebrow">Organisms</p>
       <h1>Modal</h1>
-      <p class="subhead">Centered dialog with shadcn‑style slots.</p>
     </div>
-    <ango-button label="Playground" variant="ghost" (click)="playgroundDrawerOpen = true"></ango-button>
+    <div class="right">
+      <ango-button
+        label="Playground"
+        variant="ghost"
+        (click)="playgroundDrawerOpen = true"
+      ></ango-button>
+    </div>
   </header>
 
   <div class="variant">
@@ -72,7 +77,11 @@
         >
           <p>Modal content goes here.</p>
           <div modal-actions>
-            <ango-button label="Cancel" variant="ghost" (click)="playgroundModalOpen = false"></ango-button>
+            <ango-button
+              label="Cancel"
+              variant="ghost"
+              (click)="playgroundModalOpen = false"
+            ></ango-button>
             <ango-button label="Confirm" (click)="playgroundModalOpen = false"></ango-button>
           </div>
         </ango-modal>

@@ -1,4 +1,4 @@
-@use '../../tokens/tokens' as *;
+@use "../../tokens/tokens" as *;
 
 .atomic-page {
   display: grid;
@@ -10,18 +10,25 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
-}
 
-.eyebrow {
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  color: $ango-muted;
-}
+  .left {
+    .eyebrow {
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: $ango-muted;
+      margin-bottom: 5px;
+    }
 
-.subhead {
-  color: $ango-text;
-  margin: 0.4rem 0 0;
+    h1 {
+      font-size: 28px;
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .explain {

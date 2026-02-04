@@ -1,50 +1,165 @@
-<div class="ds-shell">
-  <aside class="ds-sidebar">
+<div class="ds-shell" [class.sidebar-open]="isSidebarOpen()">
+  <div class="sidebar-overlay" *ngIf="isSidebarOpen()" (click)="closeSidebar()"></div>
+  <aside class="ds-sidebar" [class.active]="isSidebarOpen()">
     <div class="ds-brand">
       <span class="eyebrow">Ango UI</span>
       <h2>Design System</h2>
     </div>
+    <button class="sidebar-close" type="button" (click)="closeSidebar()">Close</button>
 
-    <nav class="ds-nav">
-      <a routerLink="/design-system" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        Overview
-      </a>
-      <a routerLink="/design-system/foundations" routerLinkActive="active">
-        Foundations
-      </a>
-      <a routerLink="/design-system/components" routerLinkActive="active">
-        Components
-      </a>
-    </nav>
+    <section class="ds-section pt-0">
+      <ul>
+        <li>
+          <a
+            routerLink="/design-system"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeSidebar()"
+          >
+            Overview
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/foundations"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Foundations
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeSidebar()"
+          >
+            Components
+          </a>
+        </li>
+      </ul>
+    </section>
 
     <div class="ds-section">
       <p class="section-title">Atoms</p>
       <ul>
-        <li><a routerLink="/design-system/components/buttons" routerLinkActive="active">Buttons</a></li>
-        <li><a routerLink="/design-system/components/inputs" routerLinkActive="active">Inputs</a></li>
-        <li><a routerLink="/design-system/components/checkboxes" routerLinkActive="active">Checkboxes</a></li>
-        <li><a routerLink="/design-system/components/radios" routerLinkActive="active">Radios</a></li>
-        <li><a routerLink="/design-system/components/selects" routerLinkActive="active">Selects</a></li>
-        <li><a routerLink="/design-system/components/dropdowns" routerLinkActive="active">Dropdowns</a></li>
+        <li>
+          <a
+            routerLink="/design-system/components/buttons"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Buttons
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/inputs"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Inputs
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/checkboxes"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Checkboxes
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/radios"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Radios
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/selects"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Selects
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/dropdowns"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Dropdowns
+          </a>
+        </li>
       </ul>
     </div>
     <div class="ds-section">
       <p class="section-title">Molecules</p>
       <ul>
-        <li><a routerLink="/design-system/components/molecules" routerLinkActive="active">Form Field</a></li>
+        <li>
+          <a
+            routerLink="/design-system/components/molecules"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Form Field
+          </a>
+        </li>
       </ul>
     </div>
     <div class="ds-section">
       <p class="section-title">Organisms</p>
       <ul>
-        <li><a routerLink="/design-system/components/organisms" routerLinkActive="active">Sign-in Card</a></li>
-        <li><a routerLink="/design-system/components/modals" routerLinkActive="active">Modals</a></li>
-        <li><a routerLink="/design-system/components/drawers" routerLinkActive="active">Drawers</a></li>
+        <li>
+          <a
+            routerLink="/design-system/components/organisms"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Sign-in Card
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/modals"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Modals
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/design-system/components/drawers"
+            routerLinkActive="active"
+            (click)="closeSidebar()"
+          >
+            Drawers
+          </a>
+        </li>
       </ul>
     </div>
   </aside>
 
   <main class="ds-content">
+    <div class="mobile-header">
+      <button class="menu-button" type="button" (click)="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-title">
+        <span class="eyebrow">Ango UI</span>
+        <h3>Design System</h3>
+      </div>
+    </div>
     <router-outlet />
   </main>
 </div>

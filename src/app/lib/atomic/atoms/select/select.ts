@@ -42,6 +42,7 @@ export class AtomicSelect {
   }
 
   select(value: string) {
+    this.value = value;
     this.valueChange.emit(value);
     this.open.set(false);
   }

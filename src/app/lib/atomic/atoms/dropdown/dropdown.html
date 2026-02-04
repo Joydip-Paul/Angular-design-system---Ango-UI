@@ -10,7 +10,7 @@
     <span class="chevron" [class.open]="open()"></span>
   </button>
 
-  <div class="menu" *ngIf="open()">
+  <div class="menu" *ngIf="open()" (mouseenter)="onMenuEnter()" (mouseleave)="onMenuLeave()">
     <button
       type="button"
       class="menu-item"

@@ -1,11 +1,17 @@
 <section class="atomic-page">
   <header class="page-header">
-    <div>
+    <div class="left">
       <p class="eyebrow">Organisms</p>
       <h1>Drawer</h1>
       <p class="subhead">Slide‑in panels from any edge.</p>
     </div>
-    <ango-button label="Playground" variant="ghost" (click)="playgroundDrawerOpen = true"></ango-button>
+    <div class="right">
+      <ango-button
+        label="Playground"
+        variant="ghost"
+        (click)="playgroundDrawerOpen = true"
+      ></ango-button>
+    </div>
   </header>
 
   <div class="variant">
@@ -43,12 +49,7 @@
   <div class="variant">
     <div class="preview">
       <ango-button label="Open top drawer" (click)="topOpen = true"></ango-button>
-      <ango-drawer
-        [open]="topOpen"
-        title="Top drawer"
-        position="top"
-        (closed)="topOpen = false"
-      >
+      <ango-drawer [open]="topOpen" title="Top drawer" position="top" (closed)="topOpen = false">
         <p>Drawer content</p>
       </ango-drawer>
     </div>
