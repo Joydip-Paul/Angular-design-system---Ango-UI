@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AtomicButton } from '../../atoms/button/button';
 import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
 import { AtomicRadio } from '../../atoms/radio/radio';
+import { AtomicDrawer } from '../../organisms/drawer/drawer';
 import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
 
 @Component({
   selector: 'ango-radio-page',
   standalone: true,
-  imports: [AtomicRadio, AtomicCheckbox, AtomicCodeBlock, FormsModule],
+  imports: [AtomicButton, AtomicRadio, AtomicCheckbox, AtomicDrawer, AtomicCodeBlock, FormsModule],
   templateUrl: './radio-page.html',
   styleUrl: './radio-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,6 +24,7 @@ export class RadioPage {
   protected playgroundValue = 'starter';
   protected playgroundChecked = false;
   protected playgroundDisabled = false;
+  protected playgroundOpen = false;
 
   protected get playgroundCode() {
     const attrs: string[] = [

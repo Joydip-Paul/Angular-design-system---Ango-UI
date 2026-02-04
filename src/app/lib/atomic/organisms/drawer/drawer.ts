@@ -9,13 +9,13 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { NgIf, NgClass } from '@angular/common';
+import { NgClass, CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'ango-drawer',
   standalone: true,
-  imports: [NgIf, NgClass],
+  imports: [CommonModule, NgClass],
   templateUrl: './drawer.html',
   styleUrl: './drawer.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

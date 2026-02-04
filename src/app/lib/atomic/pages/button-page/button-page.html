@@ -5,9 +5,11 @@
       <h1>Buttons</h1>
       <p class="subhead">Primary, ghost, and disabled button variants.</p>
     </div>
-    <button class="playground-trigger" type="button" (click)="togglePlayground()">
-      Playground
-    </button>
+    <ango-button
+      label="Playground"
+      variant="ghost"
+      (click)="playgroundOpen = true"
+    ></ango-button>
   </header>
 
   <div class="variant">
@@ -66,17 +68,14 @@
     <ango-code-block [code]="loadingCode"></ango-code-block>
   </div>
 
-  <div class="drawer-overlay" *ngIf="playgroundOpen" (click)="closePlayground()"></div>
-  <aside class="playground-drawer" [class.open]="playgroundOpen">
-    <div class="drawer-header">
-      <div>
-        <p class="eyebrow">Playground</p>
-        <h2>Customize and preview</h2>
-        <p class="explain">Change values and see the button update live.</p>
-      </div>
-      <button class="drawer-close" type="button" (click)="closePlayground()">Close</button>
-    </div>
-
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Button playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Change values and see the button update live.</p>
     <div class="playground-body">
       <div class="preview">
         <ango-button
@@ -133,5 +132,5 @@
 
       <ango-code-block [code]="playgroundCode"></ango-code-block>
     </div>
-  </aside>
+  </ango-drawer>
 </section>

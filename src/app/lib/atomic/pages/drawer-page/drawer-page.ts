@@ -52,6 +52,7 @@ export class DrawerPage {
 `.trim();
 
   protected playgroundOpen = false;
+  protected playgroundDrawerOpen = false;
   protected playgroundTitle = 'Playground drawer';
   protected playgroundPosition: 'left' | 'right' | 'top' | 'bottom' = 'right';
   protected playgroundSize: 'sm' | 'md' | 'lg' | 'full' = 'md';

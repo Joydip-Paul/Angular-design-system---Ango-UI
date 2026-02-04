@@ -1,14 +1,24 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AtomicButton } from '../../atoms/button/button';
 import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
 import { AtomicDropdown, AtomicDropdownItem } from '../../atoms/dropdown/dropdown';
 import { AtomicSelect, AtomicSelectOption } from '../../atoms/select/select';
+import { AtomicDrawer } from '../../organisms/drawer/drawer';
 import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
 
 @Component({
   selector: 'ango-dropdown-page',
   standalone: true,
-  imports: [AtomicDropdown, AtomicCheckbox, AtomicSelect, AtomicCodeBlock, FormsModule],
+  imports: [
+    AtomicButton,
+    AtomicDropdown,
+    AtomicCheckbox,
+    AtomicSelect,
+    AtomicDrawer,
+    AtomicCodeBlock,
+    FormsModule,
+  ],
   templateUrl: './dropdown-page.html',
   styleUrl: './dropdown-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -57,6 +67,7 @@ export class DropdownPage {
   protected playgroundSelected = '';
   protected playgroundDisabled = false;
   protected playgroundHover = false;
+  protected playgroundOpen = false;
 
   protected readonly selectedOptions: AtomicSelectOption[] = [
     { label: '(none)', value: '' },

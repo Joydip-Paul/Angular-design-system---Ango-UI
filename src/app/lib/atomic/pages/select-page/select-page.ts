@@ -1,13 +1,22 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AtomicButton } from '../../atoms/button/button';
 import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
 import { AtomicSelect, AtomicSelectOption } from '../../atoms/select/select';
+import { AtomicDrawer } from '../../organisms/drawer/drawer';
 import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
 
 @Component({
   selector: 'ango-select-page',
   standalone: true,
-  imports: [AtomicSelect, AtomicCheckbox, AtomicCodeBlock, FormsModule],
+  imports: [
+    AtomicButton,
+    AtomicSelect,
+    AtomicCheckbox,
+    AtomicDrawer,
+    AtomicCodeBlock,
+    FormsModule,
+  ],
   templateUrl: './select-page.html',
   styleUrl: './select-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -47,6 +56,7 @@ export class SelectPage {
   protected playgroundDisabled = false;
   protected playgroundLabel = 'Plan';
   protected playgroundPlaceholder = 'Choose a plan';
+  protected playgroundOpen = false;
   protected readonly valueOptions: AtomicSelectOption[] = [
     { label: '(none)', value: '' },
     { label: 'Starter', value: 'starter' },

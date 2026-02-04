@@ -4,6 +4,7 @@ import { AtomicModal } from '../../organisms/modal/modal';
 import { AtomicButton } from '../../atoms/button/button';
 import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
 import { AtomicSelect, AtomicSelectOption } from '../../atoms/select/select';
+import { AtomicDrawer } from '../../organisms/drawer/drawer';
 import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
 
 @Component({
@@ -14,6 +15,7 @@ import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
     AtomicButton,
     AtomicCheckbox,
     AtomicSelect,
+    AtomicDrawer,
     AtomicCodeBlock,
     FormsModule,
   ],
@@ -48,7 +50,8 @@ export class ModalPage {
 </ango-modal>
 `.trim();
 
-  protected playgroundOpen = false;
+  protected playgroundDrawerOpen = false;
+  protected playgroundModalOpen = false;
   protected playgroundTitle = 'Playground modal';
   protected playgroundSize: 'sm' | 'md' | 'lg' | 'full' = 'md';
   protected playgroundOverlayClose = true;

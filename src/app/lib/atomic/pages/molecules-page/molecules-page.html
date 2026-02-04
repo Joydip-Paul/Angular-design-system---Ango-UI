@@ -1,8 +1,11 @@
 <section class="atomic-page">
-  <header>
-    <p class="eyebrow">Molecules</p>
-    <h1>Form Field</h1>
-    <p class="subhead">A labeled input pattern ready for forms.</p>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Molecules</p>
+      <h1>Form Field</h1>
+      <p class="subhead">A labeled input pattern ready for forms.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
   </header>
 
   <div class="variant">
@@ -12,4 +15,44 @@
     <p class="explain">A reusable molecule that pairs a label with an input.</p>
     <ango-code-block [code]="formFieldCode"></ango-code-block>
   </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Form field playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Adjust label, placeholder, and type.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-form-field
+          [label]="playgroundLabel"
+          [placeholder]="playgroundPlaceholder"
+          [type]="playgroundType"
+        ></ango-form-field>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Label</span>
+          <input type="text" [(ngModel)]="playgroundLabel" />
+        </label>
+
+        <label>
+          <span>Placeholder</span>
+          <input type="text" [(ngModel)]="playgroundPlaceholder" />
+        </label>
+
+        <ango-select
+          label="Type"
+          [options]="typeOptions"
+          [value]="playgroundType"
+          (valueChange)="setPlaygroundType($event)"
+        ></ango-select>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
 </section>

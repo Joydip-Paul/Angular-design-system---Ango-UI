@@ -1,8 +1,11 @@
 <section class="atomic-page">
-  <header>
-    <p class="eyebrow">Organisms</p>
-    <h1>Sign-in Card</h1>
-    <p class="subhead">Complete form layout with inputs and CTA.</p>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Organisms</p>
+      <h1>Sign-in Card</h1>
+      <p class="subhead">Complete form layout with inputs and CTA.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
   </header>
 
   <div class="variant">
@@ -12,4 +15,36 @@
     <p class="explain">A full sign-in organism composed of form fields and a CTA.</p>
     <ango-code-block [code]="signInCode"></ango-code-block>
   </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Sign-in card playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Customize the title and subtitle.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-signin-card
+          [title]="playgroundTitle"
+          [subtitle]="playgroundSubtitle"
+        ></ango-signin-card>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Title</span>
+          <input type="text" [(ngModel)]="playgroundTitle" />
+        </label>
+
+        <label>
+          <span>Subtitle</span>
+          <input type="text" [(ngModel)]="playgroundSubtitle" />
+        </label>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
 </section>

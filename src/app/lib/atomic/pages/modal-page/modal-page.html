@@ -5,6 +5,7 @@
       <h1>Modal</h1>
       <p class="subhead">Centered dialog with shadcn‑style slots.</p>
     </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundDrawerOpen = true"></ango-button>
   </header>
 
   <div class="variant">
@@ -50,28 +51,29 @@
     <ango-code-block [code]="actionCode"></ango-code-block>
   </div>
 
-  <div class="variant playground">
-    <header>
-      <p class="eyebrow">Playground</p>
-      <h2>Customize and preview</h2>
-      <p class="explain">Tune size, overlay close, and visibility.</p>
-    </header>
-
+  <ango-drawer
+    [open]="playgroundDrawerOpen"
+    title="Modal playground"
+    position="right"
+    size="md"
+    (closed)="playgroundDrawerOpen = false"
+  >
+    <p class="explain">Tune size, overlay close, and visibility.</p>
     <div class="playground-body">
       <div class="preview">
-        <ango-button label="Open playground" (click)="playgroundOpen = true"></ango-button>
+        <ango-button label="Open playground" (click)="playgroundModalOpen = true"></ango-button>
         <ango-modal
-          [open]="playgroundOpen"
+          [open]="playgroundModalOpen"
           [title]="playgroundTitle"
           [size]="playgroundSize"
           [closeOnOverlay]="playgroundOverlayClose"
           [showClose]="playgroundShowClose"
-          (closed)="playgroundOpen = false"
+          (closed)="playgroundModalOpen = false"
         >
           <p>Modal content goes here.</p>
           <div modal-actions>
-            <ango-button label="Cancel" variant="ghost" (click)="playgroundOpen = false"></ango-button>
-            <ango-button label="Confirm" (click)="playgroundOpen = false"></ango-button>
+            <ango-button label="Cancel" variant="ghost" (click)="playgroundModalOpen = false"></ango-button>
+            <ango-button label="Confirm" (click)="playgroundModalOpen = false"></ango-button>
           </div>
         </ango-modal>
       </div>
@@ -104,5 +106,5 @@
 
       <ango-code-block [code]="playgroundCode"></ango-code-block>
     </div>
-  </div>
+  </ango-drawer>
 </section>

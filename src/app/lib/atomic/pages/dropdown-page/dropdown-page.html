@@ -5,6 +5,7 @@
       <h1>Dropdown</h1>
       <p class="subhead">Custom menu selection with rich content potential.</p>
     </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
   </header>
 
   <div class="variant">
@@ -39,13 +40,14 @@
     <ango-code-block [code]="hoverCode"></ango-code-block>
   </div>
 
-  <div class="variant playground">
-    <header>
-      <p class="eyebrow">Playground</p>
-      <h2>Customize and preview</h2>
-      <p class="explain">Adjust labels, placeholder, and selection.</p>
-    </header>
-
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Dropdown playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Adjust labels, placeholder, and selection.</p>
     <div class="playground-body">
       <div class="preview">
         <ango-dropdown
@@ -92,5 +94,5 @@
 
       <ango-code-block [code]="playgroundCode"></ango-code-block>
     </div>
-  </div>
+  </ango-drawer>
 </section>

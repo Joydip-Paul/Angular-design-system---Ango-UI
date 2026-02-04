@@ -1,9 +1,12 @@
 <section class="atomic-page">
-  <header>
+  <header class="page-header">
     <p class="eyebrow">Atoms</p>
     <h1>Inputs</h1>
     <p class="subhead">All input variations with copy-ready code snippets.</p>
   </header>
+  <div class="page-actions">
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
+  </div>
 
   <div class="variant">
     <div class="preview">
@@ -44,4 +47,45 @@
     <p class="explain">Molecule example: label + input bundled together.</p>
     <ango-code-block [code]="formFieldCode"></ango-code-block>
   </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Input playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Edit placeholder, type, and disabled state.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-input
+          [placeholder]="playgroundPlaceholder"
+          [type]="playgroundType"
+          [disabled]="playgroundDisabled"
+        ></ango-input>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Placeholder</span>
+          <input type="text" [(ngModel)]="playgroundPlaceholder" />
+        </label>
+
+        <ango-select
+          label="Type"
+          [options]="typeOptions"
+          [value]="playgroundType"
+          (valueChange)="setPlaygroundType($event)"
+        ></ango-select>
+
+        <ango-checkbox
+          label="Disabled"
+          [checked]="playgroundDisabled"
+          (checkedChange)="playgroundDisabled = $event"
+        ></ango-checkbox>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
 </section>

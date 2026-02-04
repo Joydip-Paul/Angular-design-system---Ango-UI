@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AtomicButton } from '../../atoms/button/button';
 import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
+import { AtomicDrawer } from '../../organisms/drawer/drawer';
 import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
 
 @Component({
   selector: 'ango-checkbox-page',
   standalone: true,
-  imports: [AtomicCheckbox, AtomicCodeBlock, FormsModule],
+  imports: [AtomicButton, AtomicCheckbox, AtomicDrawer, AtomicCodeBlock, FormsModule],
   templateUrl: './checkbox-page.html',
   styleUrl: './checkbox-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,6 +23,7 @@ export class CheckboxPage {
   protected playgroundChecked = false;
   protected playgroundDisabled = false;
   protected playgroundIndeterminate = false;
+  protected playgroundOpen = false;
 
   protected get playgroundCode() {
     const attrs: string[] = [`label="${this.playgroundLabel}"`];

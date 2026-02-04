@@ -5,6 +5,7 @@
       <h1>Drawer</h1>
       <p class="subhead">Slide‑in panels from any edge.</p>
     </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundDrawerOpen = true"></ango-button>
   </header>
 
   <div class="variant">
@@ -71,13 +72,14 @@
     <ango-code-block [code]="bottomCode"></ango-code-block>
   </div>
 
-  <div class="variant playground">
-    <header>
-      <p class="eyebrow">Playground</p>
-      <h2>Customize and preview</h2>
-      <p class="explain">Change position, size, and overlay behavior.</p>
-    </header>
-
+  <ango-drawer
+    [open]="playgroundDrawerOpen"
+    title="Drawer playground"
+    position="right"
+    size="md"
+    (closed)="playgroundDrawerOpen = false"
+  >
+    <p class="explain">Change position, size, and overlay behavior.</p>
     <div class="playground-body">
       <div class="preview">
         <ango-button label="Open playground" (click)="playgroundOpen = true"></ango-button>
@@ -129,5 +131,5 @@
 
       <ango-code-block [code]="playgroundCode"></ango-code-block>
     </div>
-  </div>
+  </ango-drawer>
 </section>

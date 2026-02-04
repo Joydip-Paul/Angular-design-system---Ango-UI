@@ -5,6 +5,7 @@
       <h1>Radio</h1>
       <p class="subhead">Single-select options in a group.</p>
     </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
   </header>
 
   <div class="variant">
@@ -31,13 +32,14 @@
     <ango-code-block [code]="disabledCode"></ango-code-block>
   </div>
 
-  <div class="variant playground">
-    <header>
-      <p class="eyebrow">Playground</p>
-      <h2>Customize and preview</h2>
-      <p class="explain">Edit values and see updates instantly.</p>
-    </header>
-
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Radio playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Edit values and see updates instantly.</p>
     <div class="playground-body">
       <div class="preview">
         <ango-radio
@@ -81,5 +83,5 @@
 
       <ango-code-block [code]="playgroundCode"></ango-code-block>
     </div>
-  </div>
+  </ango-drawer>
 </section>
