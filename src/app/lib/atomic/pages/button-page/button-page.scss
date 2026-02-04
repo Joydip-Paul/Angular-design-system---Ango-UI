@@ -35,3 +35,52 @@
 .preview {
   max-width: 360px;
 }
+
+.playground {
+  gap: 1.5rem;
+}
+
+.playground h2 {
+  margin: 0.4rem 0 0;
+}
+
+.playground-body {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  align-items: start;
+}
+
+.controls {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.controls label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: $ango-muted;
+}
+
+.controls input[type="text"],
+.controls select {
+  padding: 0.6rem 0.7rem;
+  border-radius: $ango-radius-sm;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
+  font-size: 0.95rem;
+}
+
+.toggle {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .playground-body {
+    grid-template-columns: 1fr;
+  }
+}

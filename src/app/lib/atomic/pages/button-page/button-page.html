@@ -60,4 +60,68 @@
     <p class="explain">`loading` shows a spinner and locks the button.</p>
     <ango-code-block [code]="loadingCode"></ango-code-block>
   </div>
+
+  <div class="variant playground">
+    <header>
+      <p class="eyebrow">Playground</p>
+      <h2>Customize and preview</h2>
+      <p class="explain">Change values and see the button update live.</p>
+    </header>
+
+    <div class="playground-body">
+      <div class="preview">
+        <ango-button
+          [label]="playgroundLabel"
+          [variant]="playgroundVariant"
+          [radius]="playgroundRadius"
+          [fontSize]="playgroundFontSize"
+          [background]="playgroundBackground"
+          [loading]="playgroundLoading"
+          [disabled]="playgroundDisabled"
+        ></ango-button>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Label</span>
+          <input type="text" [(ngModel)]="playgroundLabel" />
+        </label>
+
+        <label>
+          <span>Variant</span>
+          <select [(ngModel)]="playgroundVariant">
+            <option value="primary">Primary</option>
+            <option value="ghost">Ghost</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Radius</span>
+          <input type="text" [(ngModel)]="playgroundRadius" placeholder="18px" />
+        </label>
+
+        <label>
+          <span>Font size</span>
+          <input type="text" [(ngModel)]="playgroundFontSize" placeholder="1rem" />
+        </label>
+
+        <label>
+          <span>Background</span>
+          <input type="text" [(ngModel)]="playgroundBackground" placeholder="#0f172a" />
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" [(ngModel)]="playgroundLoading" />
+          <span>Loading</span>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" [(ngModel)]="playgroundDisabled" />
+          <span>Disabled</span>
+        </label>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </div>
 </section>
