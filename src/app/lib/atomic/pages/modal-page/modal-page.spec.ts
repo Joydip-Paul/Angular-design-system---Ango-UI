@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectPage } from './select-page';
+import { ModalPage } from './modal-page';
 
-describe('SelectPage', () => {
-  let component: SelectPage;
-  let fixture: ComponentFixture<SelectPage>;
+describe('ModalPage', () => {
+  let component: ModalPage;
+  let fixture: ComponentFixture<ModalPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectPage],
+      imports: [ModalPage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SelectPage);
+    fixture = TestBed.createComponent(ModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

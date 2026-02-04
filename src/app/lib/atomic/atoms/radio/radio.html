@@ -1,0 +1,12 @@
+<label class="ango-radio">
+  <input
+    type="radio"
+    [name]="name"
+    [value]="value"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onChange($event)"
+  />
+  <span class="dot"></span>
+  <span class="label">{{ label }}</span>
+</label>

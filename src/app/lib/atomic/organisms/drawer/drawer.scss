@@ -1,0 +1,176 @@
+@use '../../tokens/tokens' as *;
+
+.ango-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  animation: fade-in 180ms ease;
+}
+
+.panel {
+  position: absolute;
+  background: $ango-surface;
+  color: $ango-ink;
+  box-shadow: $ango-shadow-strong;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  animation-duration: 200ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+.panel.right {
+  top: 0;
+  right: 0;
+  height: 100%;
+  animation-name: slide-right;
+}
+
+.panel.left {
+  top: 0;
+  left: 0;
+  height: 100%;
+  animation-name: slide-left;
+}
+
+.panel.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation-name: slide-top;
+}
+
+.panel.bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  animation-name: slide-bottom;
+}
+
+.panel.sm.right,
+.panel.sm.left {
+  width: 280px;
+}
+
+.panel.md.right,
+.panel.md.left {
+  width: 360px;
+}
+
+.panel.lg.right,
+.panel.lg.left {
+  width: 480px;
+}
+
+.panel.full.right,
+.panel.full.left {
+  width: 100%;
+}
+
+.panel.sm.top,
+.panel.sm.bottom {
+  height: 240px;
+}
+
+.panel.md.top,
+.panel.md.bottom {
+  height: 320px;
+}
+
+.panel.lg.top,
+.panel.lg.bottom {
+  height: 440px;
+}
+
+.panel.full.top,
+.panel.full.bottom {
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.body {
+  color: $ango-text;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.close {
+  border: 1px solid $ango-border;
+  background: transparent;
+  color: $ango-ink;
+  border-radius: $ango-radius-pill;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(-24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-top {
+  from {
+    transform: translateY(-24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-bottom {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

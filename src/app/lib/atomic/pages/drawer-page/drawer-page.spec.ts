@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectPage } from './select-page';
+import { DrawerPage } from './drawer-page';
 
-describe('SelectPage', () => {
-  let component: SelectPage;
-  let fixture: ComponentFixture<SelectPage>;
+describe('DrawerPage', () => {
+  let component: DrawerPage;
+  let fixture: ComponentFixture<DrawerPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectPage],
+      imports: [DrawerPage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SelectPage);
+    fixture = TestBed.createComponent(DrawerPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,48 @@
+@use '../../tokens/tokens' as *;
+
+.ango-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: $ango-ink;
+  font-size: 0.95rem;
+}
+
+.ango-radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ango-radio .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
+  display: grid;
+  place-items: center;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.ango-radio input:checked + .dot {
+  border-color: $ango-ink;
+}
+
+.ango-radio input:checked + .dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: $ango-ink;
+}
+
+.ango-radio input:disabled + .dot {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ango-radio input:disabled ~ .label {
+  color: $ango-muted;
+}

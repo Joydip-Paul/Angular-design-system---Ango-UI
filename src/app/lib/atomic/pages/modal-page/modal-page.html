@@ -1,0 +1,108 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Organisms</p>
+      <h1>Modal</h1>
+      <p class="subhead">Centered dialog with shadcn‑style slots.</p>
+    </div>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open basic modal" (click)="basicOpen = true"></ango-button>
+      <ango-modal [open]="basicOpen" title="Welcome" (closed)="basicOpen = false">
+        <p>Modal content goes here.</p>
+      </ango-modal>
+    </div>
+    <p class="explain">Default modal with title and body content.</p>
+    <ango-code-block [code]="basicCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open large modal" (click)="sizeOpen = true"></ango-button>
+      <ango-modal [open]="sizeOpen" title="Large modal" size="lg" (closed)="sizeOpen = false">
+        <p>Wide layouts for dense content.</p>
+      </ango-modal>
+    </div>
+    <p class="explain">Use `size` for sm/md/lg/full layouts.</p>
+    <ango-code-block [code]="sizeCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open action modal" (click)="actionOpen = true"></ango-button>
+      <ango-modal
+        [open]="actionOpen"
+        title="Delete project"
+        [closeOnOverlay]="false"
+        (closed)="actionOpen = false"
+      >
+        <p modal-subtitle>Are you sure? This action cannot be undone.</p>
+        <p>This will remove the project and all related data.</p>
+        <div modal-actions>
+          <ango-button label="Cancel" variant="ghost" (click)="actionOpen = false"></ango-button>
+          <ango-button label="Confirm" (click)="actionOpen = false"></ango-button>
+        </div>
+      </ango-modal>
+    </div>
+    <p class="explain">Add `modal-actions` slot for shadcn‑style footers.</p>
+    <ango-code-block [code]="actionCode"></ango-code-block>
+  </div>
+
+  <div class="variant playground">
+    <header>
+      <p class="eyebrow">Playground</p>
+      <h2>Customize and preview</h2>
+      <p class="explain">Tune size, overlay close, and visibility.</p>
+    </header>
+
+    <div class="playground-body">
+      <div class="preview">
+        <ango-button label="Open playground" (click)="playgroundOpen = true"></ango-button>
+        <ango-modal
+          [open]="playgroundOpen"
+          [title]="playgroundTitle"
+          [size]="playgroundSize"
+          [closeOnOverlay]="playgroundOverlayClose"
+          [showClose]="playgroundShowClose"
+          (closed)="playgroundOpen = false"
+        >
+          <p>Modal content goes here.</p>
+          <div modal-actions>
+            <ango-button label="Cancel" variant="ghost" (click)="playgroundOpen = false"></ango-button>
+            <ango-button label="Confirm" (click)="playgroundOpen = false"></ango-button>
+          </div>
+        </ango-modal>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Title</span>
+          <input type="text" [(ngModel)]="playgroundTitle" />
+        </label>
+
+        <ango-select
+          label="Size"
+          [options]="sizeOptions"
+          [value]="playgroundSize"
+          (valueChange)="setPlaygroundSize($event)"
+        ></ango-select>
+
+        <ango-checkbox
+          label="Close on overlay"
+          [checked]="playgroundOverlayClose"
+          (checkedChange)="playgroundOverlayClose = $event"
+        ></ango-checkbox>
+
+        <ango-checkbox
+          label="Show close button"
+          [checked]="playgroundShowClose"
+          (checkedChange)="playgroundShowClose = $event"
+        ></ango-checkbox>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+<label class="ango-checkbox">
+  <input
+    #input
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onChange($event)"
+  />
+  <span class="box"></span>
+  <span class="label">{{ label }}</span>
+</label>

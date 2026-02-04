@@ -79,13 +79,6 @@
   font-size: 0.95rem;
 }
 
-.toggle {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-size: 0.9rem;
-}
-
 @media (max-width: 760px) {
   .playground-body {
     grid-template-columns: 1fr;

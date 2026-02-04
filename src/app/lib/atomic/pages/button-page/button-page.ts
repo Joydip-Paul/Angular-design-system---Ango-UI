@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AtomicButton } from '../../atoms/button/button';
+import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
+import { AtomicSelect, AtomicSelectOption } from '../../atoms/select/select';
 import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
 
 @Component({
   selector: 'app-button-page',
   standalone: true,
-  imports: [AtomicButton, AtomicCodeBlock, FormsModule],
+  imports: [AtomicButton, AtomicCheckbox, AtomicSelect, AtomicCodeBlock, FormsModule, NgIf],
   templateUrl: './button-page.html',
   styleUrl: './button-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,6 +30,16 @@ export class ButtonPage {
   protected playgroundBackground = '#0f172a';
   protected playgroundLoading = false;
   protected playgroundDisabled = false;
+
+  protected readonly variantOptions: AtomicSelectOption[] = [
+    { label: 'Primary', value: 'primary' },
+    { label: 'Ghost', value: 'ghost' },
+  ];
+
+  setPlaygroundVariant(value: string) {
+    this.playgroundVariant = value === 'ghost' ? 'ghost' : 'primary';
+  }
+  protected playgroundOpen = false;
 
   protected get playgroundCode() {
     const attrs: string[] = [`label="${this.playgroundLabel}"`];
@@ -51,5 +64,13 @@ export class ButtonPage {
     }
 
     return `<ango-button ${attrs.join(' ')}></ango-button>`;
+  }
+
+  togglePlayground() {
+    this.playgroundOpen = !this.playgroundOpen;
+  }
+
+  closePlayground() {
+    this.playgroundOpen = false;
   }
 }

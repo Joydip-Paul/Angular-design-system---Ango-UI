@@ -2,36 +2,32 @@
   <header class="page-header">
     <div>
       <p class="eyebrow">Atoms</p>
-      <h1>Select</h1>
-      <p class="subhead">Dropdown list for single selection.</p>
+      <h1>Radio</h1>
+      <p class="subhead">Single-select options in a group.</p>
     </div>
   </header>
 
   <div class="variant">
     <div class="preview">
-      <ango-select
-        label="Plan"
-        placeholder="Choose a plan"
-        [options]="options"
-      ></ango-select>
+      <ango-radio name="role" label="User" value="user"></ango-radio>
     </div>
-    <p class="explain">Basic select with placeholder.</p>
+    <p class="explain">Basic radio option in a group.</p>
     <ango-code-block [code]="basicCode"></ango-code-block>
   </div>
 
   <div class="variant">
     <div class="preview">
-      <ango-select label="Plan" [options]="options" value="growth"></ango-select>
+      <ango-radio name="role" label="Admin" value="admin" [checked]="true"></ango-radio>
     </div>
-    <p class="explain">Pre-selected value with `value`.</p>
-    <ango-code-block [code]="valueCode"></ango-code-block>
+    <p class="explain">Pre-selected value using `checked`.</p>
+    <ango-code-block [code]="checkedCode"></ango-code-block>
   </div>
 
   <div class="variant">
     <div class="preview">
-      <ango-select label="Plan" [options]="options" [disabled]="true"></ango-select>
+      <ango-radio name="role" label="Disabled" value="disabled" [disabled]="true"></ango-radio>
     </div>
-    <p class="explain">Disabled state for read-only contexts.</p>
+    <p class="explain">Disabled option for locked states.</p>
     <ango-code-block [code]="disabledCode"></ango-code-block>
   </div>
 
@@ -39,19 +35,19 @@
     <header>
       <p class="eyebrow">Playground</p>
       <h2>Customize and preview</h2>
-      <p class="explain">Adjust label, placeholder, and value.</p>
+      <p class="explain">Edit values and see updates instantly.</p>
     </header>
 
     <div class="playground-body">
       <div class="preview">
-        <ango-select
+        <ango-radio
+          [name]="playgroundName"
           [label]="playgroundLabel"
-          [placeholder]="playgroundPlaceholder"
-          [options]="options"
           [value]="playgroundValue"
+          [checked]="playgroundChecked"
           [disabled]="playgroundDisabled"
-          (valueChange)="playgroundValue = $event"
-        ></ango-select>
+          (checkedChange)="playgroundChecked = $event"
+        ></ango-radio>
       </div>
 
       <div class="controls">
@@ -61,16 +57,20 @@
         </label>
 
         <label>
-          <span>Placeholder</span>
-          <input type="text" [(ngModel)]="playgroundPlaceholder" />
+          <span>Name</span>
+          <input type="text" [(ngModel)]="playgroundName" />
         </label>
 
-        <ango-select
-          label="Value"
-          [options]="valueOptions"
-          [value]="playgroundValue"
-          (valueChange)="playgroundValue = $event"
-        ></ango-select>
+        <label>
+          <span>Value</span>
+          <input type="text" [(ngModel)]="playgroundValue" />
+        </label>
+
+        <ango-checkbox
+          label="Checked"
+          [checked]="playgroundChecked"
+          (checkedChange)="playgroundChecked = $event"
+        ></ango-checkbox>
 
         <ango-checkbox
           label="Disabled"

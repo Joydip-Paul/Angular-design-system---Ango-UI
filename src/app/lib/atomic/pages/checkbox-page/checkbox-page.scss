@@ -70,8 +70,7 @@
   color: $ango-muted;
 }
 
-.controls input[type="text"],
-.controls select {
+.controls input[type="text"] {
   padding: 0.6rem 0.7rem;
   border-radius: $ango-radius-sm;
   border: 1px solid $ango-border;

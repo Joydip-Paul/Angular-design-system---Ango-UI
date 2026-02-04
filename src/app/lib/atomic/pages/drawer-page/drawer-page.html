@@ -1,0 +1,133 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Organisms</p>
+      <h1>Drawer</h1>
+      <p class="subhead">Slide‑in panels from any edge.</p>
+    </div>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open right drawer" (click)="rightOpen = true"></ango-button>
+      <ango-drawer
+        [open]="rightOpen"
+        title="Right drawer"
+        position="right"
+        (closed)="rightOpen = false"
+      >
+        <p>Drawer content</p>
+      </ango-drawer>
+    </div>
+    <p class="explain">Default right drawer.</p>
+    <ango-code-block [code]="rightCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open left drawer" (click)="leftOpen = true"></ango-button>
+      <ango-drawer
+        [open]="leftOpen"
+        title="Left drawer"
+        position="left"
+        (closed)="leftOpen = false"
+      >
+        <p>Drawer content</p>
+      </ango-drawer>
+    </div>
+    <p class="explain">Use `position="left"` for navigation drawers.</p>
+    <ango-code-block [code]="leftCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open top drawer" (click)="topOpen = true"></ango-button>
+      <ango-drawer
+        [open]="topOpen"
+        title="Top drawer"
+        position="top"
+        (closed)="topOpen = false"
+      >
+        <p>Drawer content</p>
+      </ango-drawer>
+    </div>
+    <p class="explain">Top drawer for quick filters or notifications.</p>
+    <ango-code-block [code]="topCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Open bottom drawer" (click)="bottomOpen = true"></ango-button>
+      <ango-drawer
+        [open]="bottomOpen"
+        title="Bottom drawer"
+        position="bottom"
+        (closed)="bottomOpen = false"
+      >
+        <p>Drawer content</p>
+      </ango-drawer>
+    </div>
+    <p class="explain">Bottom drawer for mobile‑style actions.</p>
+    <ango-code-block [code]="bottomCode"></ango-code-block>
+  </div>
+
+  <div class="variant playground">
+    <header>
+      <p class="eyebrow">Playground</p>
+      <h2>Customize and preview</h2>
+      <p class="explain">Change position, size, and overlay behavior.</p>
+    </header>
+
+    <div class="playground-body">
+      <div class="preview">
+        <ango-button label="Open playground" (click)="playgroundOpen = true"></ango-button>
+        <ango-drawer
+          [open]="playgroundOpen"
+          [title]="playgroundTitle"
+          [position]="playgroundPosition"
+          [size]="playgroundSize"
+          [closeOnOverlay]="playgroundOverlayClose"
+          [showClose]="playgroundShowClose"
+          (closed)="playgroundOpen = false"
+        >
+          <p>Drawer content</p>
+        </ango-drawer>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Title</span>
+          <input type="text" [(ngModel)]="playgroundTitle" />
+        </label>
+
+        <ango-select
+          label="Position"
+          [options]="positionOptions"
+          [value]="playgroundPosition"
+          (valueChange)="setPlaygroundPosition($event)"
+        ></ango-select>
+
+        <ango-select
+          label="Size"
+          [options]="sizeOptions"
+          [value]="playgroundSize"
+          (valueChange)="setPlaygroundSize($event)"
+        ></ango-select>
+
+        <ango-checkbox
+          label="Close on overlay"
+          [checked]="playgroundOverlayClose"
+          (checkedChange)="playgroundOverlayClose = $event"
+        ></ango-checkbox>
+
+        <ango-checkbox
+          label="Show close button"
+          [checked]="playgroundShowClose"
+          (checkedChange)="playgroundShowClose = $event"
+        ></ango-checkbox>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </div>
+</section>

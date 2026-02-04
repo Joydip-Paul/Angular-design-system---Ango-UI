@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectPage } from './select-page';
+import { DropdownPage } from './dropdown-page';
 
-describe('SelectPage', () => {
-  let component: SelectPage;
-  let fixture: ComponentFixture<SelectPage>;
+describe('DropdownPage', () => {
+  let component: DropdownPage;
+  let fixture: ComponentFixture<DropdownPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectPage],
+      imports: [DropdownPage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SelectPage);
+    fixture = TestBed.createComponent(DropdownPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

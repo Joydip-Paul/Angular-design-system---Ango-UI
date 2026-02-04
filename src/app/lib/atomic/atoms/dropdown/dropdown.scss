@@ -1,0 +1,69 @@
+@use '../../tokens/tokens' as *;
+
+.ango-dropdown {
+  display: grid;
+  gap: 0.4rem;
+  position: relative;
+  color: $ango-ink;
+  font-size: 0.95rem;
+}
+
+.ango-dropdown .label {
+  font-weight: 600;
+  color: $ango-muted;
+}
+
+.ango-dropdown .trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: $ango-radius-sm;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
+  cursor: pointer;
+}
+
+.ango-dropdown .chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid $ango-ink;
+  border-bottom: 2px solid $ango-ink;
+  transform: rotate(45deg);
+  transition: transform 120ms ease;
+}
+
+.ango-dropdown .chevron.open {
+  transform: rotate(-135deg);
+}
+
+.ango-dropdown .menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: $ango-surface;
+  border-radius: $ango-radius-sm;
+  border: 1px solid $ango-border;
+  box-shadow: $ango-shadow-strong;
+  display: grid;
+  z-index: 10;
+}
+
+.ango-dropdown .menu-item {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+.ango-dropdown .menu-item:hover {
+  background: $ango-surface-tint;
+}
+
+.ango-dropdown.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

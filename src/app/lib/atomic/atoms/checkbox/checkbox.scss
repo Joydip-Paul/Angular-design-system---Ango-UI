@@ -1,0 +1,57 @@
+@use '../../tokens/tokens' as *;
+
+.ango-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: $ango-ink;
+  font-size: 0.95rem;
+}
+
+.ango-checkbox input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ango-checkbox .box {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
+  display: grid;
+  place-items: center;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.ango-checkbox input:checked + .box {
+  background: $ango-ink;
+  border-color: $ango-ink;
+}
+
+.ango-checkbox input:checked + .box::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: $ango-surface-soft;
+}
+
+.ango-checkbox input:indeterminate + .box::after {
+  content: '';
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: $ango-surface-soft;
+}
+
+.ango-checkbox input:disabled + .box {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ango-checkbox input:disabled ~ .label {
+  color: $ango-muted;
+}

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectPage } from './select-page';
+import { CheckboxPage } from './checkbox-page';
 
-describe('SelectPage', () => {
-  let component: SelectPage;
-  let fixture: ComponentFixture<SelectPage>;
+describe('CheckboxPage', () => {
+  let component: CheckboxPage;
+  let fixture: ComponentFixture<CheckboxPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectPage],
+      imports: [CheckboxPage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SelectPage);
+    fixture = TestBed.createComponent(CheckboxPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

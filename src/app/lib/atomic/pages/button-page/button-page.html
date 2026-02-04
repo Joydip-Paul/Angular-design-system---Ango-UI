@@ -1,8 +1,13 @@
 <section class="atomic-page">
-  <header>
-    <p class="eyebrow">Atoms</p>
-    <h1>Buttons</h1>
-    <p class="subhead">Primary, ghost, and disabled button variants.</p>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Atoms</p>
+      <h1>Buttons</h1>
+      <p class="subhead">Primary, ghost, and disabled button variants.</p>
+    </div>
+    <button class="playground-trigger" type="button" (click)="togglePlayground()">
+      Playground
+    </button>
   </header>
 
   <div class="variant">
@@ -61,12 +66,16 @@
     <ango-code-block [code]="loadingCode"></ango-code-block>
   </div>
 
-  <div class="variant playground">
-    <header>
-      <p class="eyebrow">Playground</p>
-      <h2>Customize and preview</h2>
-      <p class="explain">Change values and see the button update live.</p>
-    </header>
+  <div class="drawer-overlay" *ngIf="playgroundOpen" (click)="closePlayground()"></div>
+  <aside class="playground-drawer" [class.open]="playgroundOpen">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">Playground</p>
+        <h2>Customize and preview</h2>
+        <p class="explain">Change values and see the button update live.</p>
+      </div>
+      <button class="drawer-close" type="button" (click)="closePlayground()">Close</button>
+    </div>
 
     <div class="playground-body">
       <div class="preview">
@@ -87,13 +96,12 @@
           <input type="text" [(ngModel)]="playgroundLabel" />
         </label>
 
-        <label>
-          <span>Variant</span>
-          <select [(ngModel)]="playgroundVariant">
-            <option value="primary">Primary</option>
-            <option value="ghost">Ghost</option>
-          </select>
-        </label>
+        <ango-select
+          label="Variant"
+          [options]="variantOptions"
+          [value]="playgroundVariant"
+          (valueChange)="setPlaygroundVariant($event)"
+        ></ango-select>
 
         <label>
           <span>Radius</span>
@@ -110,18 +118,20 @@
           <input type="text" [(ngModel)]="playgroundBackground" placeholder="#0f172a" />
         </label>
 
-        <label class="toggle">
-          <input type="checkbox" [(ngModel)]="playgroundLoading" />
-          <span>Loading</span>
-        </label>
+        <ango-checkbox
+          label="Loading"
+          [checked]="playgroundLoading"
+          (checkedChange)="playgroundLoading = $event"
+        ></ango-checkbox>
 
-        <label class="toggle">
-          <input type="checkbox" [(ngModel)]="playgroundDisabled" />
-          <span>Disabled</span>
-        </label>
+        <ango-checkbox
+          label="Disabled"
+          [checked]="playgroundDisabled"
+          (checkedChange)="playgroundDisabled = $event"
+        ></ango-checkbox>
       </div>
 
       <ango-code-block [code]="playgroundCode"></ango-code-block>
     </div>
-  </div>
+  </aside>
 </section>

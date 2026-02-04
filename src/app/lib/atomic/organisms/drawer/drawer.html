@@ -1,0 +1,14 @@
+<div class="ango-drawer" *ngIf="open">
+  <div class="overlay" (click)="onOverlayClick()"></div>
+  <aside class="panel" [ngClass]="[position, size]">
+    <header class="header">
+      <h3>{{ title }}</h3>
+      <button *ngIf="showClose" type="button" class="close" (click)="close()">
+        Close
+      </button>
+    </header>
+    <section class="body">
+      <ng-content></ng-content>
+    </section>
+  </aside>
+</div>

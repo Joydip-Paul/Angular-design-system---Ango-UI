@@ -37,6 +37,48 @@ export const DESIGN_SYSTEM_ROUTES: Routes = [
           ),
       },
       {
+        path: 'components/checkboxes',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/checkbox-page/checkbox-page').then(
+            m => m.CheckboxPage
+          ),
+      },
+      {
+        path: 'components/radios',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/radio-page/radio-page').then(
+            m => m.RadioPage
+          ),
+      },
+      {
+        path: 'components/selects',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/select-page/select-page').then(
+            m => m.SelectPage
+          ),
+      },
+      {
+        path: 'components/dropdowns',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/dropdown-page/dropdown-page').then(
+            m => m.DropdownPage
+          ),
+      },
+      {
+        path: 'components/modals',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/modal-page/modal-page').then(
+            m => m.ModalPage
+          ),
+      },
+      {
+        path: 'components/drawers',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/drawer-page/drawer-page').then(
+            m => m.DrawerPage
+          ),
+      },
+      {
         path: 'components/molecules',
         loadComponent: () =>
           import('../../lib/atomic/pages/molecules-page/molecules-page').then(

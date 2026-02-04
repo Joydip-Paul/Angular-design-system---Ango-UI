@@ -1,0 +1,18 @@
+<div class="ango-select" [class.disabled]="disabled">
+  <span class="label">{{ label }}</span>
+  <button class="trigger" type="button" (click)="toggle()">
+    <span>{{ selectedLabel }}</span>
+    <span class="chevron" [class.open]="open()"></span>
+  </button>
+
+  <div class="menu" *ngIf="open()">
+    <button
+      type="button"
+      class="menu-item"
+      *ngFor="let option of options"
+      (click)="select(option.value)"
+    >
+      {{ option.label }}
+    </button>
+  </div>
+</div>

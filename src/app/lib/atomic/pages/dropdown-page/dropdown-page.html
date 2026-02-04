@@ -2,56 +2,61 @@
   <header class="page-header">
     <div>
       <p class="eyebrow">Atoms</p>
-      <h1>Select</h1>
-      <p class="subhead">Dropdown list for single selection.</p>
+      <h1>Dropdown</h1>
+      <p class="subhead">Custom menu selection with rich content potential.</p>
     </div>
   </header>
 
   <div class="variant">
     <div class="preview">
-      <ango-select
-        label="Plan"
-        placeholder="Choose a plan"
-        [options]="options"
-      ></ango-select>
+      <ango-dropdown label="Menu" placeholder="Select item" [items]="items"></ango-dropdown>
     </div>
-    <p class="explain">Basic select with placeholder.</p>
+    <p class="explain">Basic dropdown with placeholder.</p>
     <ango-code-block [code]="basicCode"></ango-code-block>
   </div>
 
   <div class="variant">
     <div class="preview">
-      <ango-select label="Plan" [options]="options" value="growth"></ango-select>
+      <ango-dropdown label="Menu" [items]="items" selected="billing"></ango-dropdown>
     </div>
-    <p class="explain">Pre-selected value with `value`.</p>
-    <ango-code-block [code]="valueCode"></ango-code-block>
+    <p class="explain">Pre-selected item using `selected`.</p>
+    <ango-code-block [code]="selectedCode"></ango-code-block>
   </div>
 
   <div class="variant">
     <div class="preview">
-      <ango-select label="Plan" [options]="options" [disabled]="true"></ango-select>
+      <ango-dropdown label="Menu" [items]="items" [disabled]="true"></ango-dropdown>
     </div>
     <p class="explain">Disabled state for read-only contexts.</p>
     <ango-code-block [code]="disabledCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-dropdown label="Menu" [items]="items" [openOnHover]="true"></ango-dropdown>
+    </div>
+    <p class="explain">Open on hover for quick menu access.</p>
+    <ango-code-block [code]="hoverCode"></ango-code-block>
   </div>
 
   <div class="variant playground">
     <header>
       <p class="eyebrow">Playground</p>
       <h2>Customize and preview</h2>
-      <p class="explain">Adjust label, placeholder, and value.</p>
+      <p class="explain">Adjust labels, placeholder, and selection.</p>
     </header>
 
     <div class="playground-body">
       <div class="preview">
-        <ango-select
+        <ango-dropdown
           [label]="playgroundLabel"
           [placeholder]="playgroundPlaceholder"
-          [options]="options"
-          [value]="playgroundValue"
+          [items]="items"
+          [selected]="playgroundSelected"
           [disabled]="playgroundDisabled"
-          (valueChange)="playgroundValue = $event"
-        ></ango-select>
+          [openOnHover]="playgroundHover"
+          (selectedChange)="playgroundSelected = $event"
+        ></ango-dropdown>
       </div>
 
       <div class="controls">
@@ -66,11 +71,17 @@
         </label>
 
         <ango-select
-          label="Value"
-          [options]="valueOptions"
-          [value]="playgroundValue"
-          (valueChange)="playgroundValue = $event"
+          label="Selected"
+          [options]="selectedOptions"
+          [value]="playgroundSelected"
+          (valueChange)="playgroundSelected = $event"
         ></ango-select>
+
+        <ango-checkbox
+          label="Open on hover"
+          [checked]="playgroundHover"
+          (checkedChange)="playgroundHover = $event"
+        ></ango-checkbox>
 
         <ango-checkbox
           label="Disabled"

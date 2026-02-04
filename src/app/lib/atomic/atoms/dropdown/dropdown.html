@@ -1,0 +1,23 @@
+<div
+  class="ango-dropdown"
+  [class.disabled]="disabled"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <span class="label">{{ label }}</span>
+  <button class="trigger" type="button" (click)="toggle()">
+    <span>{{ selectedLabel }}</span>
+    <span class="chevron" [class.open]="open()"></span>
+  </button>
+
+  <div class="menu" *ngIf="open()">
+    <button
+      type="button"
+      class="menu-item"
+      *ngFor="let item of items"
+      (click)="select(item.value)"
+    >
+      {{ item.label }}
+    </button>
+  </div>
+</div>

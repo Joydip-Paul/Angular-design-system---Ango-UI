@@ -1,0 +1,22 @@
+<div class="ango-modal" *ngIf="open">
+  <div class="overlay" (click)="onOverlayClick()"></div>
+  <div class="panel" [ngClass]="size">
+    <header class="header">
+      <div>
+        <h3>{{ title }}</h3>
+        <ng-content select="[modal-subtitle]"></ng-content>
+      </div>
+      <button *ngIf="showClose" type="button" class="close" (click)="close()">
+        Close
+      </button>
+    </header>
+
+    <section class="body">
+      <ng-content></ng-content>
+    </section>
+
+    <footer class="footer">
+      <ng-content select="[modal-actions]"></ng-content>
+    </footer>
+  </div>
+</div>
