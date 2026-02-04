@@ -1,4 +1,4 @@
-@use '../../tokens/tokens' as *;
+@use "../../tokens/tokens" as *;
 
 .ango-drawer {
   position: fixed;
@@ -43,14 +43,14 @@
 .panel.top {
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - 50px);
   animation-name: slide-top;
 }
 
 .panel.bottom {
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - 50px);
   animation-name: slide-bottom;
 }
 
