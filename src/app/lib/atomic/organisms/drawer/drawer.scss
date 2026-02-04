@@ -40,14 +40,14 @@
 .panel.top {
   top: 0;
   left: 0;
-  width: calc(100% - 50px);
+  width: 100%;
   animation-name: slide-top;
 }
 
 .panel.bottom {
   bottom: 0;
   left: 0;
-  width: calc(100% - 50px);
+  width: 100%;
   animation-name: slide-bottom;
 }
 

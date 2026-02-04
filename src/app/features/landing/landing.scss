@@ -1,17 +1,163 @@
 .landing {
-  padding: 3rem;
+  min-height: 100vh;
+  padding: 2rem 6vw 5rem;
   background:
     radial-gradient(1200px 600px at 10% 20%, rgba(255, 214, 165, 0.45), transparent 60%),
     radial-gradient(900px 500px at 90% 10%, rgba(163, 216, 255, 0.45), transparent 55%),
     linear-gradient(160deg, #f7f3ef 0%, #f0f4f9 55%, #edf3ff 100%);
   color: #11131a;
   font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  scroll-snap-type: y proximity;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+  padding: 5rem 0;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 0 3rem;
+}
+
+.brand h2 {
+  margin: 0.2rem 0 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
 }
 
 .hero {
-  max-width: 720px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-content {
   display: grid;
   gap: 1.5rem;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 24px 60px rgba(16, 24, 40, 0.18);
+  display: grid;
+  gap: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: #11131a;
+  color: #f8fafc;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.code {
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  background: #11131a;
+  color: #f8fafc;
+  font-size: 0.85rem;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.feature.alt {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.feature-text {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-panel {
+  background: #11131a;
+  color: #f8fafc;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 45px rgba(16, 24, 40, 0.22);
+  display: grid;
+  gap: 1rem;
+}
+
+.panel-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.pill {
+  background: rgba(248, 250, 252, 0.15);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+.site-footer {
+  margin-top: 4rem;
+  padding: 2.5rem 0 0;
+  border-top: 1px solid rgba(17, 19, 26, 0.15);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.footer-links a {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.footer-dev {
+  display: grid;
+  gap: 0.35rem;
+  text-align: right;
+}
+
+.footer-dev a {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.dev-name {
+  margin: 0;
+  font-weight: 600;
 }
 
 .eyebrow {
@@ -29,6 +175,11 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0;
+}
+
 .subhead {
   font-size: 1.125rem;
   line-height: 1.6;
@@ -40,6 +191,7 @@ h1 {
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .cta {
@@ -56,13 +208,63 @@ h1 {
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
+.cta.small {
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+}
+
 .cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 24px 60px rgba(16, 24, 40, 0.28);
 }
 
+.ghost {
+  color: #11131a;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 19, 26, 0.25);
+}
+
+@media (max-width: 960px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .hero,
+  .feature {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 0;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-dev {
+    text-align: left;
+  }
+}
+
 @media (max-width: 720px) {
   .landing {
-    padding: 6rem 8vw;
+    padding: 2rem 7vw 4rem;
+  }
+
+  .hero-card,
+  .feature-panel {
+    padding: 1.5rem;
+  }
+
+  .nav-links,
+  .cta.small {
+    display: none;
   }
 }

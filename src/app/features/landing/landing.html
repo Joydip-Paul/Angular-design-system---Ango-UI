@@ -1,13 +1,109 @@
 <main class="landing">
-  <section class="hero">
-    <p class="eyebrow">Ango UI</p>
-    <h1>Atomic Angular design system you can copy and ship.</h1>
-    <p class="subhead">
-      Built with Signals and OnPush. Copy the atomic folder, drop it into your project,
-      and stay productive.
-    </p>
-    <div class="cta-row">
-      <a class="cta" routerLink="/design-system">Get Started</a>
+  <header class="site-header">
+    <div class="brand">
+      <span class="eyebrow">Ango UI</span>
+      <h2>Design System</h2>
+    </div>
+    <nav class="nav-links">
+      <a routerLink="/design-system">Docs</a>
+      <a routerLink="/design-system/components">Components</a>
+      <a routerLink="/design-system/foundations">Foundations</a>
+    </nav>
+    <a class="cta small" routerLink="/design-system">Get Started</a>
+  </header>
+
+  <section class="hero scroll-section">
+    <div class="hero-content">
+      <p class="eyebrow">Atomic Angular</p>
+      <h1>Copy‑first design system for fast Angular teams.</h1>
+      <p class="subhead">
+        Built with Signals + OnPush. Copy the atomic folder, drop it into your project,
+        and ship consistent UI in minutes.
+      </p>
+      <div class="cta-row">
+        <a class="cta" routerLink="/design-system">Explore Components</a>
+        <a class="ghost" routerLink="/design-system/foundations">View Foundations</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="chip">Atomic Folder</div>
+      <h3>Copy `src/app/lib/atomic`</h3>
+      <p>Atoms, molecules, organisms, tokens, utils, and docs-ready pages.</p>
+      <div class="code">
+        <span>src/app/lib/atomic</span>
+      </div>
     </div>
   </section>
+
+  <section class="feature scroll-section">
+    <div class="feature-text">
+      <p class="eyebrow">Playgrounds</p>
+      <h2>Interactive docs with live drawers.</h2>
+      <p>
+        Every component includes a playground drawer for quick testing,
+        copy‑ready code, and variants you can preview instantly.
+      </p>
+      <ango-button label="Try the Button" routerLink="/design-system/components/buttons"></ango-button>
+    </div>
+    <div class="feature-panel">
+      <div class="panel-title">Playground Drawer</div>
+      <div class="panel-row">
+        <span>Variant</span>
+        <span class="pill">Primary</span>
+      </div>
+      <div class="panel-row">
+        <span>Radius</span>
+        <span class="pill">18px</span>
+      </div>
+      <div class="panel-row">
+        <span>Loading</span>
+        <span class="pill">true</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature alt scroll-section">
+    <div class="feature-panel">
+      <div class="panel-title">Tokens</div>
+      <div class="panel-row">
+        <span>--ango-color-ink</span>
+        <span class="pill">#0f172a</span>
+      </div>
+      <div class="panel-row">
+        <span>--ango-radius-lg</span>
+        <span class="pill">24px</span>
+      </div>
+      <div class="panel-row">
+        <span>--ango-shadow-strong</span>
+        <span class="pill">0 20px 45px</span>
+      </div>
+    </div>
+    <div class="feature-text">
+      <p class="eyebrow">Foundations</p>
+      <h2>Design tokens you can edit.</h2>
+      <p>
+        Centralize colors, spacing, radius, and typography in one place.
+        Customize the tokens and everything updates across the system.
+      </p>
+      <ango-button label="Edit Tokens" routerLink="/design-system/foundations"></ango-button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div>
+      <h3>Ango UI</h3>
+      <p>Atomic Angular design system with copy‑first workflow.</p>
+    </div>
+    <div class="footer-links">
+      <a routerLink="/design-system">Docs</a>
+      <a routerLink="/design-system/components">Components</a>
+      <a routerLink="/design-system/foundations">Foundations</a>
+    </div>
+    <div class="footer-dev">
+      <p class="dev-name">Joydip Paul</p>
+      <a href="https://joydipjd.netlify.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+      <a href="https://github.com/joydip-paul" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/joydip-paul-90b447190/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
 </main>
