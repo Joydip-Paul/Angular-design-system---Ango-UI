@@ -6,7 +6,9 @@ The goal: let teams copy one folder and start shipping consistent UI fast.
 ## Highlights
 - Atomic structure: atoms, molecules, organisms, templates, pages.
 - Copy-first: users can copy `src/app/lib/atomic` into their own Angular apps.
-- Design system docs with a left sidebar + right preview + copyable code snippets.
+- Design system docs with a left sidebar, playground drawers, and copyable code snippets.
+- Custom select + dropdown components with hover and click behavior.
+- Modal and drawer organisms with sizes, positions, and overlay close.
 
 ## Quick Start
 ```bash
@@ -22,6 +24,14 @@ Open `http://localhost:4200/` to see the landing page.
 - `/design-system/components` Components gallery
 - `/design-system/components/buttons` Button variants
 - `/design-system/components/inputs` Input variants
+- `/design-system/components/checkboxes` Checkbox variants
+- `/design-system/components/radios` Radio variants
+- `/design-system/components/selects` Select variants
+- `/design-system/components/dropdowns` Dropdown variants
+- `/design-system/components/molecules` Form field (molecule)
+- `/design-system/components/organisms` Sign-in card (organism)
+- `/design-system/components/modals` Modal organism
+- `/design-system/components/drawers` Drawer organism
 
 ## Atomic Folder (Copy This)
 The entire design system lives inside:
@@ -36,6 +46,7 @@ src/app/lib/atomic/molecules
 src/app/lib/atomic/organisms
 src/app/lib/atomic/utils
 src/app/lib/atomic/tokens
+src/app/lib/atomic/pages
 ```
 
 ## Tokens
