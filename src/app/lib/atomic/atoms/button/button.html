@@ -1,3 +1,12 @@
-<button class="ango-button" [class.ghost]="variant === 'ghost'" [disabled]="disabled">
-  {{ label }}
+<button
+  class="ango-button"
+  [class.ghost]="variant === 'ghost'"
+  [class.loading]="loading"
+  [disabled]="disabled || loading"
+  [style.borderRadius]="radius"
+  [style.fontSize]="fontSize"
+  [style.background]="background"
+>
+  <span class="label" [class.hidden]="loading">{{ label }}</span>
+  <span class="spinner" *ngIf="loading"></span>
 </button>

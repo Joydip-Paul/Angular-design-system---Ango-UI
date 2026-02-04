@@ -10,6 +10,11 @@
   color: $ango-surface-soft;
   box-shadow: $ango-shadow-soft;
   transition: transform 150ms ease, box-shadow 150ms ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .ango-button:hover {
@@ -29,4 +34,33 @@
   color: $ango-ink;
   border: 1px solid $ango-border;
   box-shadow: none;
+}
+
+.ango-button.loading {
+  cursor: progress;
+}
+
+.label.hidden {
+  opacity: 0;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  border: 2px solid rgba(248, 250, 252, 0.35);
+  border-top-color: $ango-surface-soft;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+}
+
+.ango-button.ghost .spinner {
+  border: 2px solid rgba(15, 23, 42, 0.2);
+  border-top-color: $ango-ink;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

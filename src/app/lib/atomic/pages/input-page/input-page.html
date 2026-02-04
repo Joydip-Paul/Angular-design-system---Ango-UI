@@ -9,6 +9,7 @@
     <div class="preview">
       <ango-input placeholder="Type something"></ango-input>
     </div>
+    <p class="explain">Standard text input for general fields.</p>
     <ango-code-block [code]="inputTextCode"></ango-code-block>
   </div>
 
@@ -16,6 +17,7 @@
     <div class="preview">
       <ango-input type="email" placeholder="name@company.com"></ango-input>
     </div>
+    <p class="explain">Email input with proper keyboard hinting.</p>
     <ango-code-block [code]="inputEmailCode"></ango-code-block>
   </div>
 
@@ -23,6 +25,7 @@
     <div class="preview">
       <ango-input type="password" placeholder="••••••••"></ango-input>
     </div>
+    <p class="explain">Password input for sensitive credentials.</p>
     <ango-code-block [code]="inputPasswordCode"></ango-code-block>
   </div>
 
@@ -30,6 +33,7 @@
     <div class="preview">
       <ango-input placeholder="Disabled" [disabled]="true"></ango-input>
     </div>
+    <p class="explain">Disabled state for unavailable or locked fields.</p>
     <ango-code-block [code]="inputDisabledCode"></ango-code-block>
   </div>
 
@@ -37,6 +41,7 @@
     <div class="preview">
       <ango-form-field label="Email" placeholder="you@example.com" type="email"></ango-form-field>
     </div>
+    <p class="explain">Molecule example: label + input bundled together.</p>
     <ango-code-block [code]="formFieldCode"></ango-code-block>
   </div>
 </section>

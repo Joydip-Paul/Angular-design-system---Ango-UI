@@ -9,6 +9,7 @@
     <div class="preview">
       <ango-button label="Primary Button"></ango-button>
     </div>
+    <p class="explain">Default primary button for the main call to action.</p>
     <ango-code-block [code]="primaryCode"></ango-code-block>
   </div>
 
@@ -16,6 +17,7 @@
     <div class="preview">
       <ango-button label="Ghost Button" variant="ghost"></ango-button>
     </div>
+    <p class="explain">Ghost style for secondary or less prominent actions.</p>
     <ango-code-block [code]="ghostCode"></ango-code-block>
   </div>
 
@@ -23,6 +25,39 @@
     <div class="preview">
       <ango-button label="Disabled" [disabled]="true"></ango-button>
     </div>
+    <p class="explain">Disabled state to indicate an unavailable action.</p>
     <ango-code-block [code]="disabledCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Soft Radius" radius="5px"></ango-button>
+    </div>
+    <p class="explain">Use `radius` to customize corner roundness.</p>
+    <ango-code-block [code]="radiusCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Large Text" fontSize="1.1rem"></ango-button>
+    </div>
+    <p class="explain">Increase legibility or emphasis by passing a custom `fontSize`.</p>
+    <ango-code-block [code]="fontSizeCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Brand" background="#ff7a18"></ango-button>
+    </div>
+    <p class="explain">Override the background for brand or context color.</p>
+    <ango-code-block [code]="backgroundCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-button label="Loading" [loading]="true"></ango-button>
+    </div>
+    <p class="explain">`loading` shows a spinner and locks the button.</p>
+    <ango-code-block [code]="loadingCode"></ango-code-block>
   </div>
 </section>
