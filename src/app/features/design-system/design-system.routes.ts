@@ -65,6 +65,27 @@ export const DESIGN_SYSTEM_ROUTES: Routes = [
           ),
       },
       {
+        path: 'components/accordions',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/accordion-page/accordion-page').then(
+            m => m.AccordionPage
+          ),
+      },
+      {
+        path: 'components/toggles',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/toggle-page/toggle-page').then(
+            m => m.TogglePage
+          ),
+      },
+      {
+        path: 'components/avatars',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/avatar-page/avatar-page').then(
+            m => m.AvatarPage
+          ),
+      },
+      {
         path: 'components/modals',
         loadComponent: () =>
           import('../../lib/atomic/pages/modal-page/modal-page').then(

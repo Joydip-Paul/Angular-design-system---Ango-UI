@@ -1,0 +1,63 @@
+@use '../../tokens/tokens' as *;
+
+.ango-accordion {
+  border: 1px solid $ango-border;
+  border-radius: $ango-radius-md;
+  background: $ango-surface;
+  overflow: hidden;
+  box-shadow: $ango-shadow-strong;
+}
+
+.header {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: $ango-ink;
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $ango-surface-tint;
+  color: $ango-ink;
+  font-size: 0.85rem;
+}
+
+.chevron {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid $ango-ink;
+  border-bottom: 2px solid $ango-ink;
+  transform: rotate(45deg);
+  transition: transform 150ms ease;
+}
+
+.chevron.open {
+  transform: rotate(-135deg);
+}
+
+.body {
+  padding: 0 1rem 1rem;
+  color: $ango-text;
+}
+
+.ango-accordion.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

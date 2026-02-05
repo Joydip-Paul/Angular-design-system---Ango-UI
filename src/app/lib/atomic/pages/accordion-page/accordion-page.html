@@ -1,0 +1,118 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Atoms</p>
+      <h1>Accordion</h1>
+      <p class="subhead">Collapsible content panels.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
+  </header>
+
+  <div class="variant">
+    <div class="preview accordion-stack">
+      <ango-accordion title="Shipping details">
+        <p>Delivery times, carrier options, and tracking info.</p>
+      </ango-accordion>
+      <ango-accordion title="Returns policy">
+        <p>Free returns within 30 days for unused items.</p>
+      </ango-accordion>
+      <ango-accordion title="Warranty">
+        <p>One‑year coverage for manufacturing defects.</p>
+      </ango-accordion>
+    </div>
+    <p class="explain">Basic accordion with toggleable content.</p>
+    <ango-code-block [code]="basicCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-accordion title="Expanded" [open]="true">
+        <p>Expanded by default.</p>
+      </ango-accordion>
+    </div>
+    <p class="explain">Use `open` to expand by default.</p>
+    <ango-code-block [code]="openCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-accordion title="Disabled" [disabled]="true">
+        <p>Disabled accordion.</p>
+      </ango-accordion>
+    </div>
+    <p class="explain">Disabled state for non-interactive sections.</p>
+    <ango-code-block [code]="disabledCode"></ango-code-block>
+  </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Accordion playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Adjust title and state.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-accordion
+          [title]="playgroundTitle"
+          [icon]="playgroundIcon"
+          [open]="playgroundExpanded"
+          [disabled]="playgroundDisabled"
+        >
+          <p>Accordion content goes here.</p>
+        </ango-accordion>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Title</span>
+          <input type="text" [(ngModel)]="playgroundTitle" />
+        </label>
+
+        <label>
+          <span>Icon</span>
+          <input type="text" [(ngModel)]="playgroundIcon" />
+        </label>
+
+        <ango-checkbox
+          label="Expanded"
+          [checked]="playgroundExpanded"
+          (checkedChange)="playgroundExpanded = $event"
+        ></ango-checkbox>
+
+        <ango-checkbox
+          label="Disabled"
+          [checked]="playgroundDisabled"
+          (checkedChange)="playgroundDisabled = $event"
+        ></ango-checkbox>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
+
+  <section class="demo-section">
+    <div>
+      <p class="eyebrow">Demo</p>
+      <h2>Accordion from data</h2>
+      <p class="explain">
+        Example of looping over an array and keeping a single section open.
+      </p>
+    </div>
+
+    <div class="accordion-stack">
+      <ango-accordion
+        *ngFor="let item of demoItems; let i = index"
+        [title]="item.title"
+        [icon]="item.icon"
+        [open]="activeIndex === i"
+        (openChange)="setActive(i)"
+      >
+        <p>{{ item.content }}</p>
+      </ango-accordion>
+    </div>
+
+    <ango-code-block [code]="demoLoopCode"></ango-code-block>
+  </section>
+</section>

@@ -1,0 +1,115 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Atoms</p>
+      <h1>Avatar</h1>
+      <p class="subhead">Profile image with initials fallback.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-avatar fname="Joydip" lname="Paul"></ango-avatar>
+    </div>
+    <p class="explain">Initials fallback when no image is provided.</p>
+    <ango-code-block [code]="basicCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-avatar imageBase="https://i.pravatar.cc/150?img=" [userId]="12"></ango-avatar>
+    </div>
+    <p class="explain">Image source built from `imageBase` + `userId`.</p>
+    <ango-code-block [code]="imageCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-avatar fname="JP" [isCircle]="true"></ango-avatar>
+    </div>
+    <p class="explain">Circle style using `isCircle`.</p>
+    <ango-code-block [code]="circleCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-avatar fname="JP" [isBorderRadius]="true"></ango-avatar>
+    </div>
+    <p class="explain">Rounded rectangle using `isBorderRadius`.</p>
+    <ango-code-block [code]="radiusCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-avatar fname="JP" [size]="64"></ango-avatar>
+    </div>
+    <p class="explain">Custom size with the `size` input.</p>
+    <ango-code-block [code]="sizeCode"></ango-code-block>
+  </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Avatar playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Customize initials, image, size, radius, and font size.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-avatar
+          [userId]="playgroundUserId"
+          [imageBase]="playgroundImageBase"
+          [fname]="playgroundFname"
+          [lname]="playgroundLname"
+          [size]="playgroundSize"
+          [fontSize]="playgroundFontSize"
+          [isBorderRadius]="isRounded"
+          [isCircle]="isCircle"
+        ></ango-avatar>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>First name</span>
+          <input type="text" [(ngModel)]="playgroundFname" />
+        </label>
+
+        <label>
+          <span>Last name</span>
+          <input type="text" [(ngModel)]="playgroundLname" />
+        </label>
+
+        <label>
+          <span>Image base</span>
+          <input type="text" [(ngModel)]="playgroundImageBase" />
+        </label>
+
+        <label>
+          <span>User ID</span>
+          <input type="number" [(ngModel)]="playgroundUserId" />
+        </label>
+
+        <label>
+          <span>Size</span>
+          <input type="number" [(ngModel)]="playgroundSize" />
+        </label>
+
+        <label>
+          <span>Font size</span>
+          <input type="text" [(ngModel)]="playgroundFontSize" />
+        </label>
+
+        <ango-select
+          label="Radius"
+          [options]="radiusOptions"
+          [value]="playgroundRadiusMode"
+          (valueChange)="setPlaygroundRadius($event)"
+        ></ango-select>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
+</section>

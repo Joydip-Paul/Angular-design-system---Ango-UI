@@ -1,0 +1,12 @@
+<div class="ango-accordion" [class.disabled]="disabled">
+  <button class="header" type="button" (click)="toggle()">
+    <span class="title">
+      <span class="icon" *ngIf="icon">{{ icon }}</span>
+      {{ title }}
+    </span>
+    <span class="chevron" [class.open]="open"></span>
+  </button>
+  <div class="body" *ngIf="open">
+    <ng-content></ng-content>
+  </div>
+</div>

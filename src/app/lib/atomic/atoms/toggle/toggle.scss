@@ -1,0 +1,56 @@
+@use '../../tokens/tokens' as *;
+
+.ango-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: $ango-ink;
+  font-size: 0.95rem;
+}
+
+.ango-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.track {
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: $ango-surface-tint;
+  border: 1px solid $ango-border;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: $ango-surface;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+  transform: translateX(0);
+  transition: transform 150ms ease;
+}
+
+.ango-toggle input:checked + .track {
+  background: $ango-ink;
+  border-color: $ango-ink;
+}
+
+.ango-toggle input:checked + .track .thumb {
+  transform: translateX(18px);
+}
+
+.ango-toggle input:disabled + .track {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ango-toggle input:disabled ~ .label {
+  color: $ango-muted;
+}

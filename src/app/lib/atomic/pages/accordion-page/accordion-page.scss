@@ -1,0 +1,92 @@
+@use '../../tokens/tokens' as *;
+
+.atomic-page {
+  display: grid;
+  gap: 2rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: $ango-muted;
+}
+
+.subhead {
+  color: $ango-text;
+  margin: 0.4rem 0 0;
+}
+
+.explain {
+  margin: 0;
+  color: $ango-muted;
+  font-size: 0.95rem;
+}
+
+.variant {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: $ango-radius-lg;
+  background: $ango-surface;
+  box-shadow: $ango-shadow-strong;
+}
+
+.preview {
+  max-width: 420px;
+}
+
+.accordion-stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.demo-section {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: $ango-radius-lg;
+  background: $ango-surface;
+  box-shadow: $ango-shadow-strong;
+}
+
+.playground-body {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  align-items: start;
+}
+
+.controls {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.controls label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: $ango-muted;
+}
+
+.controls input[type='text'] {
+  padding: 0.6rem 0.7rem;
+  border-radius: $ango-radius-sm;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .playground-body {
+    grid-template-columns: 1fr;
+  }
+}

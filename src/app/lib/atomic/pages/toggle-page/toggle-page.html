@@ -1,0 +1,75 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Atoms</p>
+      <h1>Toggle</h1>
+      <p class="subhead">Switch between on and off states.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-toggle label="Notifications"></ango-toggle>
+    </div>
+    <p class="explain">Basic toggle for feature flags.</p>
+    <ango-code-block [code]="basicCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-toggle label="Enabled" [checked]="true"></ango-toggle>
+    </div>
+    <p class="explain">Checked state for enabled flags.</p>
+    <ango-code-block [code]="checkedCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-toggle label="Disabled" [disabled]="true"></ango-toggle>
+    </div>
+    <p class="explain">Disabled state for locked settings.</p>
+    <ango-code-block [code]="disabledCode"></ango-code-block>
+  </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Toggle playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Adjust label and state.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-toggle
+          [label]="playgroundLabel"
+          [checked]="playgroundChecked"
+          [disabled]="playgroundDisabled"
+          (checkedChange)="playgroundChecked = $event"
+        ></ango-toggle>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Label</span>
+          <input type="text" [(ngModel)]="playgroundLabel" />
+        </label>
+
+        <ango-checkbox
+          label="Checked"
+          [checked]="playgroundChecked"
+          (checkedChange)="playgroundChecked = $event"
+        ></ango-checkbox>
+
+        <ango-checkbox
+          label="Disabled"
+          [checked]="playgroundDisabled"
+          (checkedChange)="playgroundDisabled = $event"
+        ></ango-checkbox>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
+</section>

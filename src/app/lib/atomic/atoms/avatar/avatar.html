@@ -1,0 +1,10 @@
+<div
+  class="ango-avatar"
+  [style.width.px]="size"
+  [style.height.px]="size"
+  [style.borderRadius]="radius"
+  [style.fontSize]="fontSize"
+>
+  <img *ngIf="imageSrc" [src]="imageSrc" [alt]="fname || 'Avatar'" />
+  <span *ngIf="!imageSrc">{{ initials }}</span>
+</div>

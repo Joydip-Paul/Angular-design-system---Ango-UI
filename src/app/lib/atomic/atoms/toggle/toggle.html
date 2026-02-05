@@ -1,0 +1,12 @@
+<label class="ango-toggle">
+  <input
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onChange($event)"
+  />
+  <span class="track">
+    <span class="thumb"></span>
+  </span>
+  <span class="label">{{ label }}</span>
+</label>
