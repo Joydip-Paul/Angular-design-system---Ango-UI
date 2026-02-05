@@ -1,0 +1,141 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Organisms</p>
+      <h1>Table</h1>
+      <p class="subhead">Responsive table that becomes cards on mobile.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-table [columns]="columns" [rows]="rows" [actions]="actions"></ango-table>
+    </div>
+    <p class="explain">Default table with actions and responsive card layout.</p>
+    <ango-code-block [code]="basicCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-table
+        [columns]="columns"
+        [rows]="rows"
+        [actions]="actions"
+        thBackground="#1f2937"
+      ></ango-table>
+    </div>
+    <p class="explain">Custom header background for dark themes.</p>
+    <ango-code-block [code]="darkHeaderCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-table [columns]="columns" [rows]="rows"></ango-table>
+    </div>
+    <p class="explain">Hide actions when not needed.</p>
+    <ango-code-block [code]="noActionsCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-table
+        [columns]="columns"
+        [rows]="rows"
+        [actions]="actions"
+        radius="8px"
+        fontSize="0.85rem"
+      ></ango-table>
+    </div>
+    <p class="explain">Compact style with smaller radius and font size.</p>
+    <ango-code-block [code]="compactCode"></ango-code-block>
+  </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Table playground"
+    position="right"
+    size="lg"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Customize header color, radius, and font size.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-table
+          [columns]="columns"
+          [rows]="rows"
+          [actions]="playgroundShowActions ? actions : []"
+          [thBackground]="playgroundThBg"
+          [radius]="playgroundRadius"
+          [fontSize]="playgroundFontSize"
+        ></ango-table>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Header background</span>
+          <input type="text" [(ngModel)]="playgroundThBg" />
+        </label>
+
+        <label>
+          <span>Radius</span>
+          <input type="text" [(ngModel)]="playgroundRadius" />
+        </label>
+
+        <label>
+          <span>Font size</span>
+          <input type="text" [(ngModel)]="playgroundFontSize" />
+        </label>
+
+        <ango-select
+          label="Actions"
+          [options]="actionOptions"
+          [value]="playgroundShowActions ? 'show' : 'hide'"
+          (valueChange)="setShowActions($event)"
+        ></ango-select>
+
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
+
+  <section class="demo-section">
+    <div>
+      <p class="eyebrow">Demo</p>
+      <h2>Data + Interface example</h2>
+      <p class="explain">
+        Define a row interface, columns, and bind your data directly.
+      </p>
+    </div>
+    <div class="demo-table">
+      <ango-table
+        [columns]="columns"
+        [rows]="rows"
+        [actions]="actions"
+        lastIndexAlign="right"
+        (actionClick)="onDemoAction($event)"
+      ></ango-table>
+    </div>
+    <ango-modal
+      [open]="demoModalOpen"
+      title="Table Action"
+      size="sm"
+      (closed)="demoModalOpen = false"
+    >
+      <p>
+        Action:
+        <strong>{{ demoAction }}</strong>
+      </p>
+      <p *ngIf="demoRow as row">
+        Row: {{ row.name }} · {{ row.role }} · {{ row.location }}
+      </p>
+      <div modal-actions>
+        <ango-button label="Close" variant="ghost" (click)="demoModalOpen = false"></ango-button>
+      </div>
+    </ango-modal>
+    <ango-code-block [code]="demoInterfaceCode"></ango-code-block>
+    <ango-code-block [code]="demoUsageCode"></ango-code-block>
+    <ango-code-block [code]="demoActionsCode"></ango-code-block>
+  </section>
+</section>

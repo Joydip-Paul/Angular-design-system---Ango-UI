@@ -1,0 +1,103 @@
+@use "../../tokens/tokens" as *;
+
+.ango-table {
+  background: $ango-surface;
+  border: 1px solid $ango-border;
+  overflow: hidden;
+  box-shadow: $ango-shadow-strong;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  color: $ango-surface-soft;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+tbody tr {
+  border-bottom: 1px solid $ango-border;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  color: $ango-text;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.actions button {
+  border: 1px solid $ango-border;
+  background: transparent;
+  color: $ango-ink;
+  border-radius: $ango-radius-pill;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.actions .icon {
+  font-size: 0.9em;
+}
+
+@media (max-width: 860px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    border: 1px solid $ango-border;
+    border-radius: $ango-radius-md;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    background: $ango-surface;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: $ango-ink;
+    min-width: 110px;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}

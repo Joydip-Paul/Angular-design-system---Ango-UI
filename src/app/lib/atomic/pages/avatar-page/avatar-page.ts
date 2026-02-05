@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AtomicButton } from '../../atoms/button/button';
-import { AtomicCheckbox } from '../../atoms/checkbox/checkbox';
 import { AtomicSelect, AtomicSelectOption } from '../../atoms/select/select';
 import { AtomicAvatar } from '../../atoms/avatar/avatar';
 import { AtomicDrawer } from '../../organisms/drawer/drawer';
@@ -12,7 +11,6 @@ import { AtomicCodeBlock } from '../../utils/copy/code-block/code-block';
   standalone: true,
   imports: [
     AtomicButton,
-    AtomicCheckbox,
     AtomicSelect,
     AtomicAvatar,
     AtomicDrawer,

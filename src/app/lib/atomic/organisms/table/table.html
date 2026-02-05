@@ -1,0 +1,42 @@
+<div class="ango-table" [style.borderRadius]="radius" [style.fontSize]="fontSize">
+  <table>
+    <thead>
+      <tr>
+        <th
+          *ngFor="let col of columns"
+          [style.background]="thBackground"
+        >
+          {{ col.label }}
+        </th>
+        <th
+          *ngIf="actions.length"
+          [style.background]="thBackground"
+        >
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows; let rowIndex = index">
+        <td
+          *ngFor="let col of columns"
+          [attr.data-label]="col.label"
+        >
+          {{ displayValue(row[col.key]) }}
+        </td>
+        <td *ngIf="actions.length" data-label="Actions">
+          <div class="actions">
+            <button
+              *ngFor="let action of actions"
+              type="button"
+              (click)="onAction(action.id, rowIndex)"
+            >
+              <span *ngIf="action.icon" class="icon">{{ action.icon }}</span>
+              {{ action.label }}
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

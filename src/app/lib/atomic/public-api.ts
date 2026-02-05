@@ -11,4 +11,5 @@ export * from './molecules/form-field/form-field';
 export * from './organisms/sign-in-card/sign-in-card';
 export * from './organisms/modal/modal';
 export * from './organisms/drawer/drawer';
+export * from './organisms/table/table';
 export * from './utils/copy/code-block/code-block';

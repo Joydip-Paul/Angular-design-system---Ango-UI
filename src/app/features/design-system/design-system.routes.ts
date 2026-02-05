@@ -86,6 +86,13 @@ export const DESIGN_SYSTEM_ROUTES: Routes = [
           ),
       },
       {
+        path: 'components/tables',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/table-page/table-page').then(
+            m => m.TablePage
+          ),
+      },
+      {
         path: 'components/modals',
         loadComponent: () =>
           import('../../lib/atomic/pages/modal-page/modal-page').then(
