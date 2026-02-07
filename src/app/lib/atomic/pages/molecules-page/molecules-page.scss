@@ -25,10 +25,7 @@
 }
 
 .playground-body {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: minmax(180px, 240px) 1fr;
-  align-items: start;
+
 }
 
 .controls {
@@ -53,6 +50,6 @@
 
 @media (max-width: 760px) {
   .playground-body {
-    grid-template-columns: 1fr;
+
   }
 }

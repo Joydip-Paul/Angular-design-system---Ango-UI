@@ -77,7 +77,7 @@
     [open]="playgroundDrawerOpen"
     title="Drawer playground"
     position="right"
-    size="md"
+    width="800px" inMobileSize="100%" 
     (closed)="playgroundDrawerOpen = false"
   >
     <p class="explain">Change position, size, and overlay behavior.</p>
@@ -89,6 +89,8 @@
           [title]="playgroundTitle"
           [position]="playgroundPosition"
           [size]="playgroundSize"
+          [width]="playgroundWidth"
+          [height]="playgroundHeight"
           [closeOnOverlay]="playgroundOverlayClose"
           [showClose]="playgroundShowClose"
           (closed)="playgroundOpen = false"
@@ -116,6 +118,17 @@
           [value]="playgroundSize"
           (valueChange)="setPlaygroundSize($event)"
         ></ango-select>
+
+        <label>
+          <span>Custom width (left/right)</span>
+          <input type="text" [(ngModel)]="playgroundWidth" />
+        </label>
+
+        <label>
+          <span>Custom height (top/bottom)</span>
+          <input type="text" [(ngModel)]="playgroundHeight" />
+        </label>
+
 
         <ango-checkbox
           label="Close on overlay"

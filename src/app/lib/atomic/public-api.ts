@@ -7,6 +7,7 @@ export * from './atoms/dropdown/dropdown';
 export * from './atoms/accordion/accordion';
 export * from './atoms/toggle/toggle';
 export * from './atoms/avatar/avatar';
+export * from './atoms/textarea/textarea';
 export * from './molecules/form-field/form-field';
 export * from './organisms/sign-in-card/sign-in-card';
 export * from './organisms/modal/modal';

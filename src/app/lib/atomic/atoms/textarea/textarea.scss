@@ -1,0 +1,26 @@
+@use '../../tokens/tokens' as *;
+
+.ango-textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: $ango-radius-sm;
+  border: 1px solid $ango-border;
+  background: $ango-surface-soft;
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.ango-textarea:focus {
+  border-color: $ango-ink;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.15);
+}
+
+.ango-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: $ango-surface-tint;
+}

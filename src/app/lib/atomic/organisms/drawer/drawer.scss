@@ -21,6 +21,8 @@
   animation-duration: 200ms;
   animation-timing-function: ease;
   animation-fill-mode: both;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .panel.right {
@@ -90,6 +92,7 @@
 .panel.full.bottom {
   height: 100%;
 }
+
 
 .header {
   display: flex;

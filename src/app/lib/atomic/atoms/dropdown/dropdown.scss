@@ -49,6 +49,7 @@
   box-shadow: $ango-shadow-strong;
   display: grid;
   z-index: 10;
+  overflow: hidden;
 }
 
 .ango-dropdown .menu::before {

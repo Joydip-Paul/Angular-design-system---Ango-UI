@@ -1,8 +1,13 @@
-@use '../../tokens/tokens' as *;
+@use "../../tokens/tokens" as *;
+
+.ango-input-wrap {
+  position: relative;
+  width: 100%;
+}
 
 .ango-input {
-  width: calc(100% - 32px);
-  padding: 14px;
+  width: 100%;
+  padding: 14px 10px;
   border-radius: $ango-radius-sm;
   border: 1px solid $ango-border;
   background: $ango-surface-soft;
@@ -22,4 +27,31 @@
   opacity: 0.6;
   cursor: not-allowed;
   background: $ango-surface-tint;
+}
+
+.toggle-visibility {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #f9fafc;
+  color: var(--ango-color-ink);
+  padding: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 10px);
+}
+
+.toggle-visibility svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.toggle-visibility:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

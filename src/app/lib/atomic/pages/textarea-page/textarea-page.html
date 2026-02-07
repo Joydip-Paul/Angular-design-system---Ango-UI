@@ -1,0 +1,79 @@
+<section class="atomic-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Atoms</p>
+      <h1>Textarea</h1>
+      <p class="subhead">Multi-line input with rows, cols, and auto height.</p>
+    </div>
+    <ango-button label="Playground" variant="ghost" (click)="playgroundOpen = true"></ango-button>
+  </header>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-textarea placeholder="Write a note..." [rows]="4"></ango-textarea>
+    </div>
+    <p class="explain">Basic textarea with custom rows.</p>
+    <ango-code-block [code]="basicCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-textarea placeholder="Short note" [rows]="3" [cols]="24"></ango-textarea>
+    </div>
+    <p class="explain">Control columns with the `cols` input.</p>
+    <ango-code-block [code]="colsCode"></ango-code-block>
+  </div>
+
+  <div class="variant">
+    <div class="preview">
+      <ango-textarea placeholder="Auto height" [autoHeight]="true"></ango-textarea>
+    </div>
+    <p class="explain">Auto-height grows with text length.</p>
+    <ango-code-block [code]="autoCode"></ango-code-block>
+  </div>
+
+  <ango-drawer
+    [open]="playgroundOpen"
+    title="Textarea playground"
+    position="right"
+    size="md"
+    (closed)="playgroundOpen = false"
+  >
+    <p class="explain">Adjust rows, cols, and auto height.</p>
+    <div class="playground-body">
+      <div class="preview">
+        <ango-textarea
+          [placeholder]="playgroundPlaceholder"
+          [rows]="playgroundRows"
+          [cols]="playgroundCols"
+          [autoHeight]="playgroundAuto"
+        ></ango-textarea>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Placeholder</span>
+          <input type="text" [(ngModel)]="playgroundPlaceholder" />
+        </label>
+
+        <label>
+          <span>Rows</span>
+          <input type="number" [(ngModel)]="playgroundRows" />
+        </label>
+
+        <label>
+          <span>Cols</span>
+          <input type="number" [(ngModel)]="playgroundCols" />
+        </label>
+
+        <ango-checkbox
+          label="Auto height"
+          [checked]="playgroundAuto"
+          (checkedChange)="playgroundAuto = $event"
+        ></ango-checkbox>
+      </div>
+
+      <ango-code-block [code]="playgroundCode"></ango-code-block>
+    </div>
+  </ango-drawer>
+</section>

@@ -5,6 +5,25 @@
   gap: 2rem;
 }
 
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: $ango-muted;
+}
+
+.subhead {
+  color: $ango-text;
+  margin: 0.4rem 0 0;
+}
+
 .explain {
   margin: 0;
   color: $ango-muted;
@@ -21,10 +40,14 @@
 }
 
 .preview {
-  max-width: 360px;
+  max-width: 420px;
 }
 
 .playground-body {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  align-items: start;
 }
 
 .controls {
@@ -39,8 +62,8 @@
   color: $ango-muted;
 }
 
-.controls input[type="text"],
-.controls select {
+.controls input[type='text'],
+.controls input[type='number'] {
   padding: 0.6rem 0.7rem;
   border-radius: $ango-radius-sm;
   border: 1px solid $ango-border;

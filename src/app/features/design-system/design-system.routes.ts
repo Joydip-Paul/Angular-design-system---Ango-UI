@@ -37,6 +37,13 @@ export const DESIGN_SYSTEM_ROUTES: Routes = [
           ),
       },
       {
+        path: 'components/textareas',
+        loadComponent: () =>
+          import('../../lib/atomic/pages/textarea-page/textarea-page').then(
+            m => m.TextareaPage
+          ),
+      },
+      {
         path: 'components/checkboxes',
         loadComponent: () =>
           import('../../lib/atomic/pages/checkbox-page/checkbox-page').then(

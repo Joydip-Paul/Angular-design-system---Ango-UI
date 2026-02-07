@@ -16,7 +16,7 @@
 }
 
 .track {
-  width: 42px;
+  width: 52px;
   height: 24px;
   border-radius: 999px;
   background: $ango-surface-tint;
@@ -43,7 +43,7 @@
 }
 
 .ango-toggle input:checked + .track .thumb {
-  transform: translateX(18px);
+  transform: translateX(30px);
 }
 
 .ango-toggle input:disabled + .track {

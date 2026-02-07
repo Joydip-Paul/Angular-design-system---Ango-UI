@@ -58,6 +58,8 @@ export class DrawerPage {
   protected playgroundSize: 'sm' | 'md' | 'lg' | 'full' = 'md';
   protected playgroundOverlayClose = true;
   protected playgroundShowClose = true;
+  protected playgroundWidth = '360px';
+  protected playgroundHeight = '320px';
 
   protected readonly positionOptions: AtomicSelectOption[] = [
     { label: 'Right', value: 'right' },
@@ -72,6 +74,7 @@ export class DrawerPage {
     { label: 'Large', value: 'lg' },
     { label: 'Full', value: 'full' },
   ];
+
 
   setPlaygroundPosition(value: string) {
     if (value === 'left' || value === 'right' || value === 'top' || value === 'bottom') {
@@ -91,6 +94,8 @@ export class DrawerPage {
       `title="${this.playgroundTitle}"`,
       `position="${this.playgroundPosition}"`,
       `size="${this.playgroundSize}"`,
+      `width="${this.playgroundWidth}"`,
+      `height="${this.playgroundHeight}"`,
       `[closeOnOverlay]="${this.playgroundOverlayClose}"`,
       `[showClose]="${this.playgroundShowClose}"`,
     ];

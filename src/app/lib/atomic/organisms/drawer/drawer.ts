@@ -25,6 +25,8 @@ export class AtomicDrawer implements OnChanges, OnDestroy {
   @Input() title = 'Drawer';
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'right';
   @Input() size: 'sm' | 'md' | 'lg' | 'full' = 'md';
+  @Input() width?: string;
+  @Input() height?: string;
   @Input() closeOnOverlay = true;
   @Input() showClose = true;
 
